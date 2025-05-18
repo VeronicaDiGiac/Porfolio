@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>About Me</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body class="bg-black text-white p-10" style="font-family: 'Roboto', sans-serif">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header Section -->
+      <div class="flex justify-between items-start mb-10">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+        <button
+  onclick="switchLanguage('it')"
+  class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+>
+  Italiano
+</button>
+<button
+  onclick="switchLanguage('en')"
+  class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+>
+  English
+</button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+            <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Su di me</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About me</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech Stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech Stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="it"
+      >
+        Formazione
+      </h2>
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="en"
+      >
+        Education
+      </h2>
+      <div class="border-t border-gray-700 pt-6"></div>
+
+      <div class="space-y-8">
+        <!-- Web Developer Course -->
+        <div>
+          <h3 class="font-semibold text-white p-1" data-lang="it">
+            Corso di Formazione Web Developer - TalentForm 2024
+          </h3>
+          <h3 class="font-semibold text-white p-1" data-lang="en">
+            Web Developer Training Course - TalentForm 2024
+          </h3>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="it"
+          >
+            <li>Fondamenti di Java e Spring Boot</li>
+            <li>SQL per operazioni CRUD</li>
+            <li>Interfacce multifunzionali (MySQL-JAVA)</li>
+            <li>Dependency Injection, Annotations, Spring Data JPA</li>
+          </ul>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="en"
+          >
+            <li>Fundamentals of Java and Spring Boot</li>
+            <li>SQL for CRUD operations</li>
+            <li>Multifunctional interfaces (MySQL-JAVA)</li>
+            <li>Dependency Injection, Annotations, Spring Data JPA</li>
+          </ul>
+        </div>
+
+        <!-- Angular Course -->
+        <div>
+          <h3 class="font-semibold text-white p-1" data-lang="it">
+            Corso Avanzato Angular (Angular 17) - Fabio Biondi Academy 2024
+          </h3>
+          <h3 class="font-semibold text-white p-1" data-lang="en">
+            Advanced Angular Training Course (Angular 17) - Fabio Biondi Academy
+            2024
+          </h3>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="it"
+          >
+            <li>Fondamenti di Angular 14+</li>
+            <li>Approfondimenti su Angular 17+</li>
+            <li>
+              Signals, Standalone Components, Router e Applicazioni Multiview
+            </li>
+            <li>HTTP Client e REST API, Autenticazione con Auth0</li>
+            <li>Fondamenti dei Reactive Forms in Angular</li>
+          </ul>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="en"
+          >
+            <li>Fundamentals of Angular 14+</li>
+            <li>In-depth topics on Angular 17+</li>
+            <li>
+              Signals, Standalone Components, Router and Multiview Application
+            </li>
+            <li>HTTP Client and REST APIs, Authentication with Auth0</li>
+            <li>Fundamentals of Angular Reactive Forms</li>
+          </ul>
+        </div>
+
+        <!-- Front-End Developer Course -->
+        <div>
+          <h3 class="font-semibold text-white p-1" data-lang="it">
+            Corso Front-End Developer - Labfortraining | Labforweb 2023–2024
+          </h3>
+          <h3 class="font-semibold text-white p-1" data-lang="en">
+            Front-End Developer Training Course - Labfortraining | Labforweb
+            2023–2024
+          </h3>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="it"
+          >
+            <li>HTML5, CSS3, JavaScript (ES6)</li>
+            <li>Angular, Angular avanzato</li>
+            <li>Bootstrap, Responsive Design, Git</li>
+            <li>
+              Progetti progressivi per consolidare le competenze acquisite
+            </li>
+          </ul>
+          <ul
+            class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+            data-lang="en"
+          >
+            <li>HTML5, CSS3, JavaScript (ES6)</li>
+            <li>Angular, Advanced Angular</li>
+            <li>Bootstrap, Responsive Design, Git</li>
+            <li>
+              Completion of progressively challenging projects to consolidate
+              skills
+            </li>
+          </ul>
+          <!-- Diploma Section -->
+        </div>
+        <div >
+        <h3 class="font-semibold text-white mb-2" data-lang="it">
+          Diploma in Servizi Sociali - Istituto Progessionale Francesca Laura
+          Morvillo Falcone, Brindisi 2012-2013
+        </h3>
+        <ul
+          class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+          data-lang="it"
+        >
+          <li>Studi nell’ambito psico-pedagogico, educativo e sociale</li>
+          <li>Stage in strutture socio-educative e assistenziali</li>
+          <li>Sviluppo di competenze relazionali e comunicative</li>
+        </ul>
+
+        <h3 class="font-semibold text-white p-1 hidden" data-lang="en">
+          High School Diploma in Social Services - Professional Istitute
+          Francesca Laura Morvillo Falcone , Brindisi 2012-2013
+        </h3>
+        <ul
+          class="list-disc list-inside text-gray-400 space-y-1 mt-2 hidden"
+          data-lang="en"
+        >
+          <li>Studies in psychological, educational and social fields</li>
+          <li>
+            Internship experience in socio-educational and care facilities
+          </li>
+          <li>Development of interpersonal and communication skills</li>
+        </ul>
+      </div>
+      
+    <h2 class="text-sm font-semibold text-gray-400 uppercase " data-lang="it">
+  Attività extracurricolari</h2>
+<h2 class="text-sm font-semibold text-gray-400 uppercase" data-lang="en">
+    Extracurricular activities
+</h2>
+<div class="border-t border-gray-700 "></div>
+   <ul class="list-disc list-inside text-gray-400 space-y-1 mt-2" data-lang="it">
+<li>Studio di pianoforte classico presso il Conservatorio “Nino Rota” di Monopoli</li>
+<li>Partecipazione a concorsi di scrittura creativa e in prosa</li>
+</ul>
+<ul class="list-disc list-inside text-gray-400 space-y-1 mt-2 hidden" data-lang="en">
+<li>Classical piano studies at “Nino Rota” Conservatory of Monopoli</li>
+<li>Participation in creative and prose writing competitions</li>
+</ul>
+    </div>
+  </body>
+</html>

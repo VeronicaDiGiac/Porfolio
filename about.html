@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>About Me</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body class="bg-black text-white p-10"  style="font-family: 'Roboto', sans-serif">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header Section -->
+      <div class="flex justify-between items-start mb-10">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech Stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech Stack</a
+          >
+        </div>
+      </div>
+
+      <!-- About Me Section -->
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="it"
+      >
+        Chi sono
+      </h2>
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="en"
+      >
+        About Me
+      </h2>
+      <div class="border-t border-gray-700 pt-6">
+        <!-- ITALIANO -->
+        <div data-lang="it">
+          <p class="text-gray-300 mb-6">
+            Mi chiamo Veronica, sono nata in Puglia (Italia) il 30 luglio 1994.
+            Non ho mai creduto che si debba fare “una sola cosa nella vita”.
+            Infatti, ho fatto esperienze diverse che mi hanno portata fino a
+            qui!
+          </p>
+          <p class="text-gray-300 mb-6">
+            Mi sono diplomata in un istituto per i servizi sociali, dove ho
+            avuto la possibilità (e l'onore) di lavorare con persone con
+            disabilità e non. Esperienze che mi hanno lasciato un segno profondo
+            e mi hanno insegnato il valore dell’ascolto, della presenza e della
+            gentilezza.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Ho fatto la cameriera, la segretaria in uno studio di
+            amministrazione condominiale (sì, conosco i drammi dei citofoni e
+            delle riunioni di condominio!), e tante altre cose che mi hanno
+            aiutata a capire chi sono e chi non voglio essere.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Nel frattempo ho coltivato due grandi amori: la musica e la
+            scrittura. Ho studiato pianoforte in conservatorio (e anche
+            privatamente), e ogni tanto mi perdo a suonare o a scrivere di getto
+            quando qualcosa mi smuove.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Quando ho conosciuto il mio attuale compagno sono partita per
+            l'Olanda per raggiungerlo. Lì ho lavorato come addetta vendita in
+            Primark Utrecht e in un forno (spoiler: la focaccia non è la stessa
+            cosa lì), ho stretto amicizie con persone da ogni parte del mondo,
+            imparato nuove ricette e capito che non serve parlare la stessa
+            lingua per sentirsi a casa. Fino a quando sono tornata in Italia per
+            stare più vicina alla mia famiglia, mio nipote e i miei amici.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Negli ultimi anni mi sono appassionata al coding. Ho iniziato un po’
+            per gioco, fino a quando non ho deciso di volerne fare un lavoro. Lo
+            trovo stimolante, in continua evoluzione, e mi permette di
+            affrontare sempre nuove sfide.
+          </p>
+
+          <p class="text-gray-300 mb-6">
+            Nel tempo libero amo guardare film e serie tv, e ritrovarmi intorno
+            a un tavolo con gli amici per una cena e un bel gioco da tavolo.
+          </p>
+        </div>
+
+        <!-- ENGLISH -->
+        <div data-lang="en">
+          <p class="text-gray-300 mb-6">
+            My name is Veronica, I was born in Puglia (Italy) on July 30, 1994.
+            I've never believed we should do just “one thing” in life. In fact,
+            I've had many different experiences that brought me here!
+          </p>
+          <p class="text-gray-300 mb-6">
+            I graduated from a social services school, where I had the chance
+            (and honor) to work with people with and without disabilities. Those
+            experiences deeply shaped me and taught me the value of listening,
+            presence, and kindness.
+          </p>
+          <p class="text-gray-300 mb-6">
+            I've worked as a waitress, a secretary in a property management
+            office (yes, I know the drama of intercoms and condo meetings!), and
+            many other things that helped me understand who I am and who I don’t
+            want to be.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Meanwhile, I cultivated two great passions: music and writing. I
+            studied piano at the conservatory (and also privately), and I still
+            love to play or write freely whenever something stirs me
+            emotionally.
+          </p>
+        
+     <p class="text-gray-300 mb-6" data-lang="en">
+  When I met my current partner, I moved to the Netherlands to be with him. There, I worked as a sales assistant at Primark in Utrecht and in a bakery (spoiler: focaccia is not the same thing there!). I made friends from all over the world, learned new recipes, and discovered that you don’t need to speak the same language to feel at home. Eventually, I came back to Italy to be closer to my family, my nephew, and my friends.
+</p>
+          </p>
+          <p class="text-gray-300 mb-6">
+            In the last few years, I discovered coding. I started as a hobby and
+            eventually decided to turn it into a career. I find it stimulating,
+            ever-evolving, and full of new challenges to embrace.
+          </p>
+          <p class="text-gray-300 mb-6">
+            In my free time, I love watching movies and TV shows, and sitting
+            around a table with friends for dinner and a good board game.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

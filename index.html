@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio di Veronica Di Giacomo, sviluppatrice front-end junior."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Veronica Di Giacomo – Frontend Developer</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body
+    class="bg-black text-white p-10"
+    style="font-family: 'Roboto', sans-serif"
+  >
+    <div class="max-w-6xl mx-auto">
+      <!-- Header Section -->
+      <div class="flex justify-between items-start mb-10">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Su di me</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About me</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech Stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech Stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-700 pt-10"
+      >
+        <!-- Left Column -->
+        <div class="space-y-8">
+          <div>
+            <h1 class="text-2xl font-bold" data-lang="it">
+              Veronica Di Giacomo
+            </h1>
+            <h1 class="text-2xl font-bold" data-lang="en">
+              Veronica Di Giacomo
+            </h1>
+            <p class="text-lg text-gray-400" data-lang="it">
+              Sviluppatrice Frontend Junior
+            </p>
+            <p class="text-lg text-gray-400" data-lang="en">
+              Junior Frontend Developer
+            </p>
+          </div>
+
+          <p class="text-gray-300" data-lang="it">
+            Sono una Sviluppatrice Front-End Junior con un anno e mezzo di
+            apprendimento pratico ed esperienza in progetti. Mi specializzo
+            nella creazione di interfacce pulite e responsive e ho anche
+            competenze di base nello sviluppo backend, che mi permettono di
+            contribuire a tutto lo stack quando necessario.
+          </p>
+          <p class="text-gray-300" data-lang="en">
+            I'm a Junior Front-End Developer with 1.5 years of hands-on learning
+            and project experience. I specialize in building clean, responsive
+            interfaces and also have foundational skills in backend development,
+            allowing me to contribute across the full stack when needed.
+          </p>
+
+          <div class="space-y-2 border-t border-gray-700 pt-6">
+            <p data-lang="it">
+              <a class="text-blue-400 hover:underline">Brindisi - Italia</a>
+            </p>
+            <p data-lang="en">
+              <a class="text-blue-400 hover:underline">Brindisi - Italy</a>
+            </p>
+            <p>
+              <a
+                href="mailto:veronicadigiacomo190@gmail.com"
+                class="text-blue-400 hover:underline"
+                >veronicadigiacomo190@gmail.com ↗</a
+              >
+            </p>
+            <p>
+              <a href="tel:3467133115" class="text-blue-400 hover:underline"
+                >(+39) 346 7133115 ↗</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/veronicadg/"
+                class="text-blue-400 hover:underline"
+                >LinkedIn ↗</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://github.com/VeronicaDiGiac"
+                class="text-blue-400 hover:underline"
+                >Github ↗</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-8">
+          <div>
+            <h2
+              class="text-sm font-semibold text-gray-400 uppercase"
+              data-lang="it"
+            >
+              Esperienza lavorativa
+            </h2>
+            <h2
+              class="text-sm font-semibold text-gray-400 uppercase"
+              data-lang="en"
+            >
+              Work experience
+            </h2>
+            <div class="mt-4 space-y-6 border-t border-gray-700 pt-6">
+              <div>
+                <h3 class="font-semibold text-white p-1" data-lang="it">
+                  Stage Full Stack – 2025
+                </h3>
+                <h3 class="font-semibold text-white p-1" data-lang="en">
+                  Full Stack Internship – 2025
+                </h3>
+                <h4 class="font-semibold text-white mt-2" data-lang="it">
+                  Contributo a Progetti Aziendali
+                </h4>
+                <h4 class="font-semibold text-white mt-2" data-lang="en">
+                  Contribution to Company Projects
+                </h4>
+                <h4
+                  class="text-gray-300 text-sm mt-1 font-semibold"
+                  data-lang="it"
+                >
+                  Attività svolte nell'ambito di un progetto gestionale per
+                  un'azienda tessile:
+                </h4>
+                <h4
+                  class="text-gray-300 text-sm mt-1 font-semibold"
+                  data-lang="en"
+                >
+                  Activities carried out as part of a management project for a
+                  large textile company:
+                </h4>
+                <ul
+                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                  data-lang="it"
+                >
+                  <li>
+                    Manutenzione e piccoli miglioramenti di componenti UI
+                    esistenti in React.
+                  </li>
+                  <li>
+                    Risistemazione di documenti e template in formato digitale
+                    utilizzando Tailwind CSS.
+                  </li>
+                  <li>
+                    Studio e implementazione di autenticazione JWT con NestJS.
+                  </li>
+                  <li>
+                    Test di API utilizzando Postman, con focus sui flussi di
+                    autenticazione.
+                  </li>
+                  <li>
+                    Analisi approfondita del flusso di autorizzazione (header e
+                    payload JWT).
+                  </li>
+                  <li>
+                    Verifica delle risposte delle API in casi d'uso reali.
+                  </li>
+                  <li>
+                    Configurazione e setup di ambienti di sviluppo utilizzando
+                    Docker.
+                  </li>
+                </ul>
+                <ul
+                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                  data-lang="en"
+                >
+                  <li>
+                    Maintenance and minor improvements of existing UI components
+                    in React.
+                  </li>
+                  <li>
+                    Rewriting documents and templates in digital format using
+                    Tailwind CSS.
+                  </li>
+                  <li>
+                    Studied and implemented JWT authentication with NestJS.
+                  </li>
+                  <li>
+                    API testing using Postman, with a focus on authentication
+                    flows.
+                  </li>
+                  <li>
+                    In-depth analysis of the authorization flow (JWT header and
+                    payload).
+                  </li>
+                  <li>
+                    Verification of API responses in real-world use cases.
+                  </li>
+                  <li>
+                    Configuration and setup of development environments using
+                    Docker.
+                  </li>
+                </ul>
+
+                <h4
+                  class="text-gray-300 text-sm mt-1 font-semibold"
+                  data-lang="it"
+                >
+                  Attività svolte per una piattaforma di gestione task per
+                  commercialisti:
+                </h4>
+                <h4
+                  class="text-gray-300 text-sm mt-1 font-semibold"
+                  data-lang="en"
+                >
+                  Activities carried out for a task management platform for
+                  accountants:
+                </h4>
+                <ul
+                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                  data-lang="it"
+                >
+                  <li>
+                    Sviluppo di endpoint utilizzando Payload CMS, un software
+                    per la gestione di task e sottotask con scadenze, categorie
+                    e visibilità controllata.
+                  </li>
+                  <li>
+                    Progettazione e creazione di Entity Relationship Diagrams
+                    (ERD) per modellare il database e definire relazioni tra
+                    utenti, task, obblighi e logiche di ricorrenza.
+                  </li>
+                </ul>
+                <ul
+                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                  data-lang="en"
+                >
+                  <li>
+                    Development of endpoints using Payload CMS, a software for
+                    managing tasks and subtasks with deadlines, categories, and
+                    controlled visibility.
+                  </li>
+                  <li>
+                    Design and creation of Entity Relationship Diagrams (ERDs)
+                    for modeling the database and defining relationships between
+                    users, tasks, obligations, and recurrence logic.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h2
+                  class="text-sm font-semibold text-gray-400 uppercase"
+                  data-lang="it"
+                >
+                  Progetti Freelance
+                </h2>
+                <h2
+                  class="text-sm font-semibold text-gray-400 uppercase"
+                  data-lang="en"
+                >
+                  Freelance Projects
+                </h2>
+                <div class="mt-4 space-y-6 border-t border-gray-700 pt-4">
+                  <div>
+                    <h3 class="font-semibold text-white">
+                      <a
+                        href="https://veronicadigiac.github.io/Giulia-Spanu-website/home"
+                        class="hover:text-blue-300"
+                        data-lang="it"
+                        >Sito Vetrina per Professionista Freelance – Clicca per
+                        vedere il sito (2024)</a
+                      >
+                    </h3>
+                    <h3 class="font-semibold text-white">
+                      <a
+                        href="https://veronicadigiac.github.io/Giulia-Spanu-website/home"
+                        class="hover:text-blue-300"
+                        data-lang="en"
+                        >Showcase Website for a Freelance Professional – Click
+                        to view the site (2024)</a
+                      >
+                    </h3>
+                    <h4
+                      class="text-gray-300 text-sm mt-1 font-semibold"
+                      data-lang="it"
+                    >
+                      Sviluppo di un sito web per promuovere servizi di
+                      consulenza psicologica, con informazioni sui servizi
+                      offerti, un modulo di contatto e una sezione dedicata ai
+                      percorsi terapeutici.
+                    </h4>
+                    <h4
+                      class="text-gray-300 text-sm mt-1 font-semibold"
+                      data-lang="en"
+                    >
+                      Development of a website to promote psychological
+                      counseling services, including information about services
+                      offered, a contact form, and a section dedicated to
+                      therapeutic paths.
+                    </h4>
+                    <ul
+                      class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                      data-lang="it"
+                    >
+                      <li>
+                        Ottimizzazione delle performance per garantire un
+                        caricamento veloce e un'esperienza utente fluida.
+                      </li>
+                      <li>
+                        Implementazione di un design responsive con approccio
+                        mobile-first.
+                      </li>
+                      <li>Tecnologie utilizzate: Angular e Tailwind CSS.</li>
+                    </ul>
+                    <ul
+                      class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                      data-lang="en"
+                    >
+                      <li>
+                        Performance optimization to ensure fast loading and a
+                        smooth user experience.
+                      </li>
+                      <li>
+                        Implementation of a responsive design with a
+                        mobile-first approach.
+                      </li>
+                      <li>Technologies used: Angular and Tailwind CSS.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <h2
+                    class="text-sm font-semibold text-gray-400 uppercase pt-5"
+                    data-lang="it"
+                  >
+                    Progetti Personali
+                  </h2>
+                  <h2
+                    class="text-sm font-semibold text-gray-400 uppercase pt-5"
+                    data-lang="en"
+                  >
+                    Personal Projects
+                  </h2>
+                  <div class="mt-4 space-y-6 border-t border-gray-700 pt-4">
+                    <div>
+                      <h3 class="font-semibold text-white">
+                        <a
+                          href="https://veronicadigiac.github.io/e-commerce/home"
+                          class="hover:text-blue-300"
+                          data-lang="it"
+                          >E-commerce – Clicca per vedere il sito (2024)</a
+                        >
+                      </h3>
+                      <h3 class="font-semibold text-white">
+                        <a
+                          href="https://veronicadigiac.github.io/e-commerce/home"
+                          class="hover:text-blue-300"
+                          data-lang="en"
+                          >E-commerce – Click to view the site (2024)</a
+                        >
+                      </h3>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="it"
+                      >
+                        <li>
+                          Integrazione con Firebase Real-Time Database per la
+                          gestione dei dati in tempo reale.
+                        </li>
+                        <li>
+                          Implementazione di autenticazione con Auth0 e
+                          validazione dei dati utente tramite Reactive Forms.
+                        </li>
+                        <li>
+                          Tecnologie utilizzate: Angular (con Signals) e
+                          Tailwind CSS con DaisyUI per l'interfaccia utente.
+                        </li>
+                      </ul>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="en"
+                      >
+                        <li>
+                          Integrated with Firebase Real-Time Database for
+                          real-time data management.
+                        </li>
+                        <li>
+                          Implemented authentication using Auth0 and user data
+                          validation through Reactive Forms.
+                        </li>
+                        <li>
+                          Technologies used: Angular (with Signals) and Tailwind
+                          CSS with DaisyUI for the user interface.
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-white" data-lang="it">
+                        Lista delle Attività (2024)
+                      </h3>
+                      <h3 class="font-semibold text-white" data-lang="en">
+                        To-Do List (2024)
+                      </h3>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="it"
+                      >
+                        <li>
+                          Sviluppo di un'applicazione per la gestione delle
+                          attività.
+                        </li>
+                        <li>
+                          Utilizzo di JSON Server per l'archiviazione dei dati.
+                        </li>
+                        <li>
+                          Tecnologie utilizzate: Angular (con Signals),
+                          HttpClient per la comunicazione con le API, e JSON
+                          Server.
+                        </li>
+                      </ul>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="en"
+                      >
+                        <li>Developed a task management application.</li>
+                        <li>Used JSON Server for data storage.</li>
+                        <li>
+                          Technologies used: Angular (with Signals), HttpClient
+                          for API communication, and JSON Server.
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-white" data-lang="it">
+                        App Meteo (2024)
+                      </h3>
+                      <h3 class="font-semibold text-white" data-lang="en">
+                        Weather App (2024)
+                      </h3>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="it"
+                      >
+                        <li>
+                          Sviluppo di un'applicazione meteo per visualizzare
+                          dati in tempo reale.
+                        </li>
+                        <li>
+                          Gestione di richieste API per recuperare informazioni
+                          meteo come temperatura, umidità e previsioni.
+                        </li>
+                        <li>
+                          Tecnologie utilizzate: Angular, CSS, e REST API.
+                        </li>
+                      </ul>
+                      <ul
+                        class="list-disc list-inside text-gray-400 space-y-1 mt-2"
+                        data-lang="en"
+                      >
+                        <li>
+                          Developed a weather application to display real-time
+                          data.
+                        </li>
+                        <li>
+                          Managed API requests to retrieve weather information
+                          such as temperature, humidity, and forecasts.
+                        </li>
+                        <li>Technologies used: Angular, CSS, and REST APIs.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

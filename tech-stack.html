@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tech Stack</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body
+    class="bg-black text-white p-10"
+    style="font-family: 'Roboto', sans-serif"
+  >
+    <div class="max-w-6xl mx-auto">
+      <!-- Header Section -->
+      <div class="flex justify-between items-start mb-10">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg transition-colors duration-200 border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Su di me</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About me</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech Stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech Stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Section Title -->
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="it"
+      >
+        Competenze Tecniche
+      </h2>
+      <h2
+        class="text-lg font-semibold text-gray-400 uppercase m-2"
+        data-lang="en"
+      >
+        Tech Stack
+      </h2>
+      <div class="border-t border-gray-700 pt-6"></div>
+
+      <section class="py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Linguaggi -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="it">
+              Linguaggi
+            </h3>
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="en">
+              Languages
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-300">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>TypeScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <!-- Framework -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">Framework</h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-300">
+              <li>Angular 14+</li>
+            </ul>
+          </div>
+
+          <!-- Strumenti -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="it">
+              Strumenti
+            </h3>
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="en">
+              Tools
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-300">
+              <li>Git</li>
+              <li>Bootstrap</li>
+              <li>Tailwind CSS</li>
+              <li>Postman</li>
+              <li>Docker</li>
+              <li>Payload CMS</li>
+            </ul>
+          </div>
+
+          <!-- IDE -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">IDE</h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-300">
+              <li>Visual Studio Code</li>
+              <li>Eclipse</li>
+            </ul>
+          </div>
+
+          <!-- Metodologie -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="it">
+              Metodologie
+            </h3>
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="en">
+              Methodologies
+            </h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-300">
+              <li>Responsive Design</li>
+              <li>Mobile First</li>
+              <li>AJAX</li>
+            </ul>
+          </div>
+
+          <!-- Soft Skills -->
+          <div
+            class="bg-gray-900 p-6 rounded-2xl shadow-md border border-gray-800"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="it">
+              Soft Skills
+            </h3>
+            <h3 class="text-xl font-semibold mb-4 text-blue-400" data-lang="en">
+              Soft Skills
+            </h3>
+
+            <ul
+              class="list-disc list-inside space-y-1 text-gray-300"
+              data-lang="it"
+            >
+              <li>Empatia</li>
+              <li>Comunicazione</li>
+              <li>Lavoro di Squadra</li>
+              <li>Resilienza</li>
+              <li>Determinazione</li>
+            </ul>
+            <ul
+              class="list-disc list-inside space-y-1 text-gray-300"
+              data-lang="en"
+            >
+              <li>Empathy</li>
+              <li>Communication</li>
+              <li>Teamwork</li>
+              <li>Resilience</li>
+              <li>Determination</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
