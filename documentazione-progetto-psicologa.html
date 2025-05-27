@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Documentazione Progetto per Psicologa Specializzata</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body
+    class="bg-black text-white p-10"
+    style="font-family: 'Roboto', sans-serif"
+  >
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="flex justify-between items-start mb-10">
+        <div>
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >About</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech-stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech-stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Titolo -->
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="it">
+        Documentazione Progetto per Psicologa Specializzata
+      </h1>
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="en">
+        Professional Psychologist Project Documentation
+      </h1>
+
+      <!-- Indice -->
+      <h2
+        id="indice"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="it"
+      >
+        Indice
+      </h2>
+      <h2
+        id="index"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="en"
+      >
+        Index
+      </h2>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="it"
+      >
+        <li><a href="#panoramica" class="hover:underline">Panoramica</a></li>
+        <li>
+          <a href="#tecnologie" class="hover:underline"
+            >Tecnologie Utilizzate</a
+          >
+        </li>
+        <li>
+          <a href="#componenti" class="hover:underline"
+            >Componenti Principali</a
+          >
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design e UI</a></li>
+        <li>
+          <a href="#funzionalita" class="hover:underline"
+            >Funzionalità Implementate</a
+          >
+        </li>
+        <li><a href="#deploy" class="hover:underline">Deploy</a></li>
+      </ul>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="en"
+      >
+        <li><a href="#overview" class="hover:underline">Overview</a></li>
+        <li>
+          <a href="#technologies" class="hover:underline">Technologies Used</a>
+        </li>
+        <li>
+          <a href="#components" class="hover:underline">Main Components</a>
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design and UI</a></li>
+        <li>
+          <a href="#functionalities" class="hover:underline"
+            >Implemented Features</a
+          >
+        </li>
+        <li><a href="#deployment" class="hover:underline">Deployment</a></li>
+      </ul>
+
+      <!-- Sezioni -->
+      <section class="space-y-10 text-gray-300">
+        <!-- Panoramica -->
+        <div id="panoramica" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Panoramica</h3>
+          <p class="mt-2">
+            Il progetto è un'applicazione single-page (SPA) realizzata con
+            Angular, pensata per presentare la figura professionale della
+            psicologa, i servizi che offre e facilitare il contatto diretto con
+            l'utente.
+          </p>
+          <p class="mt-2">
+            L'obiettivo è creare un sito empatico, accessibile e funzionale, con
+            una navigazione semplice e un'estetica coerente con i valori di
+            ascolto, empatia e benessere interiore.
+          </p>
+        </div>
+        <div id="overview" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Overview</h3>
+          <p class="mt-2">
+            The project is a single-page application (SPA) built with Angular,
+            designed to present the professional profile of the psychologist,
+            the services offered, and facilitate direct contact with the user.
+          </p>
+          <p class="mt-2">
+            The goal is to create an empathetic, accessible, and functional site
+            with simple navigation and aesthetics consistent with the values of
+            listening, empathy, and inner well-being.
+          </p>
+        </div>
+
+        <!-- Tecnologie -->
+        <div id="tecnologie" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Tecnologie Utilizzate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (con componenti standalone)</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>HTML5</li>
+            <li>Router di Angular</li>
+          </ul>
+        </div>
+        <div id="technologies" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Technologies Used</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (with standalone components)</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>HTML5</li>
+            <li>Angular Router</li>
+          </ul>
+        </div>
+
+        <!-- Componenti -->
+        <div id="componenti" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Componenti Principali
+          </h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Componente</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Descrizione
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">HomeComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Landing page con introduzione, servizi, sezioni varie.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ButtonComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Pulsante personalizzato riutilizzabile con routerLink.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  CardsServiziComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Schede riassuntive per i servizi offerti.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ChiSonoSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Sezione dedicata alla presentazione personale della psicologa.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ContactComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Form per contatto diretto e prenotazione sedute.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ContattiSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Sezione con dettagli di contatto e modalità di comunicazione.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">FooterComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Footer del sito con informazioni legali e link utili.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">NavbarComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Barra di navigazione principale.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ServiziSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Sezione dedicata alla descrizione dettagliata dei servizi.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  WhatsappButtonComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Pulsante per contatto rapido tramite WhatsApp.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="components" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Main Components</h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Component</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">HomeComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Landing page with introduction, services, various sections.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ButtonComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Custom reusable button with routerLink.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  CardsServiziComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Summary cards for offered services.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ChiSonoSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Section dedicated to the psychologist's personal presentation.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ContactComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Form for direct contact and session booking.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ContattiSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Section with contact details and communication methods.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">FooterComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Site footer with legal information and useful links.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">NavbarComponent</td>
+                <td class="border border-gray-600 p-2">Main navigation bar.</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  ServiziSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Section dedicated to detailed service descriptions.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  WhatsappButtonComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Button for quick contact via WhatsApp.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Design e UI -->
+        <div id="design-ui" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Design e UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>UI progettata con Tailwind CSS.</li>
+            <li>Layout flessibile e ottimizzato per diversi dispositivi.</li>
+            <li>
+              Classi personalizzate per gestione sfondi e sezioni tematiche.
+            </li>
+            <li>
+              Palette colori neutra con accenti pastello per tono empatico.
+            </li>
+          </ul>
+        </div>
+        <div id="design-ui" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Design and UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>UI designed with Tailwind CSS.</li>
+            <li>Flexible layout optimized for different devices.</li>
+            <li>
+              Custom classes for background management and thematic sections.
+            </li>
+            <li>
+              Neutral color palette with pastel accents for an empathetic tone.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Funzionalità -->
+        <div id="funzionalita" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Funzionalità Implementate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Navigazione fluida e SPA tramite RouterLink.</li>
+            <li>Componenti standalone e modulari.</li>
+            <li>Form contatto con invio mail tramite EmailJS.</li>
+            <li>Responsive completo (mobile, tablet, desktop).</li>
+            <li>Sezioni su disturbi psicologici con approccio divulgativo.</li>
+          </ul>
+        </div>
+        <div id="functionalities" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Implemented Features</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Smooth SPA navigation via RouterLink.</li>
+            <li>Standalone and modular components.</li>
+            <li>Contact form with email sending with EmailJS Service.</li>
+            <li>Full responsive (mobile, tablet, desktop).</li>
+            <li>
+              Sections on psychological disorders with a divulgative approach.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Deploy -->
+        <div id="deploy" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Deploy</h3>
+          <p class="mt-2">
+            Il progetto è stato distribuito online utilizzando il servizio di
+            hosting
+            <a
+              href="https://www.netlify.com"
+              target="_blank"
+              class="text-blue-400 underline"
+              >Netlify</a
+            >, garantendo una pubblicazione veloce e affidabile con
+            aggiornamenti continui tramite integrazione con il repository Git.
+          </p>
+          <p class="mt-2">
+            Il sito è disponibile all'indirizzo:
+            <a
+              href="https://resplendent-hotteok-7bf818.netlify.app/home"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://resplendent-hotteok-7bf818.netlify.app/home
+            </a>
+          </p>
+          <p class="mt-2">
+            Il codice sorgente è disponibile su GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/Giulia-Spanu-Psicologa"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/Giulia-Spanu-Psicologa
+            </a>
+          </p>
+        </div>
+        <div id="deployment" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Deployment</h3>
+          <p class="mt-2">
+            The project was deployed online using the hosting service
+            <a
+              href="https://www.netlify.com"
+              target="_blank"
+              class="text-blue-400 underline"
+              >Netlify</a
+            >, ensuring fast and reliable publishing with continuous updates
+            through Git repository integration.
+          </p>
+          <p class="mt-2">
+            The website is available at:
+            <a
+              href="https://resplendent-hotteok-7bf818.netlify.app/home"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://resplendent-hotteok-7bf818.netlify.app/home
+            </a>
+          </p>
+          <p class="mt-2">
+            The source code is available on GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/Giulia-Spanu-Psicologa"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/Giulia-Spanu-Psicologa
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

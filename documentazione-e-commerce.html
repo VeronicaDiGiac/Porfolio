@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Documentazione Progetto E-Commerce Angular</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body
+    class="bg-black text-white p-10"
+    style="font-family: 'Roboto', sans-serif"
+  >
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="flex justify-between items-start mb-10">
+        <div>
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >About</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech-stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech-stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Titolo -->
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="it">
+        Documentazione Progetto E-Commerce
+      </h1>
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="en">
+        E-Commerce Project Documentation
+      </h1>
+
+      <!-- Indice -->
+      <h2
+        id="indice"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="it"
+      >
+        Indice
+      </h2>
+      <h2
+        id="index"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="en"
+      >
+        Index
+      </h2>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="it"
+      >
+        <li><a href="#panoramica" class="hover:underline">Panoramica</a></li>
+        <li>
+          <a href="#tecnologie" class="hover:underline"
+            >Tecnologie Utilizzate</a
+          >
+        </li>
+        <li>
+          <a href="#componenti" class="hover:underline"
+            >Componenti Principali</a
+          >
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design e UI</a></li>
+        <li>
+          <a href="#funzionalita" class="hover:underline"
+            >Funzionalità Implementate</a
+          >
+        </li>
+        <li><a href="#deploy" class="hover:underline">Deploy</a></li>
+      </ul>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="en"
+      >
+        <li><a href="#overview" class="hover:underline">Overview</a></li>
+        <li>
+          <a href="#technologies" class="hover:underline">Technologies Used</a>
+        </li>
+        <li>
+          <a href="#components" class="hover:underline">Main Components</a>
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design and UI</a></li>
+        <li>
+          <a href="#functionalities" class="hover:underline"
+            >Implemented Features</a
+          >
+        </li>
+        <li><a href="#deployment" class="hover:underline">Deployment</a></li>
+      </ul>
+
+      <!-- Sezioni -->
+      <section class="space-y-10 text-gray-300">
+        <!-- Panoramica -->
+        <div id="panoramica" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Panoramica</h3>
+          <p class="mt-2">
+            Il progetto è un'applicazione e-commerce sviluppata con Angular che
+            offre una piattaforma completa per la vendita di abbigliamento con
+            sezioni dedicate per uomini e donne.
+          </p>
+          <p class="mt-2">
+            L'applicazione include tutte le funzionalità principali di un
+            e-commerce: carrello, checkout, gestione del profilo utente,
+            newsletter e integrazione con database esterno per la gestione dei
+            prodotti.
+          </p>
+          <p class="mt-2">
+            Il progetto è stato deployato su GitHub Pages e dimostra una solida
+            implementazione dei concetti fondamentali di Angular, tra cui
+            gestione dello stato, componenti riutilizzabili e routing avanzato.
+          </p>
+        </div>
+        <div id="overview" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Overview</h3>
+          <p class="mt-2">
+            The project is an e-commerce application built with Angular that
+            provides a complete platform for clothing sales with dedicated
+            sections for men and women.
+          </p>
+          <p class="mt-2">
+            The application includes all main e-commerce features: shopping
+            cart, checkout, user profile management, newsletter and integration
+            with external database for product management.
+          </p>
+          <p class="mt-2">
+            The project has been deployed on GitHub Pages and demonstrates a
+            solid implementation of fundamental Angular concepts including state
+            management, reusable components and advanced routing.
+          </p>
+        </div>
+
+        <!-- Tecnologie -->
+        <div id="tecnologie" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Tecnologie Utilizzate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (componenti standalone)</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Firebase Realtime Database</li>
+            <li>Angular Reactive Forms</li>
+            <li>Angular Router</li>
+            <li>GitHub Pages (per il deploy)</li>
+            <li>Auth0 (per l'autenticazione)</li>
+          </ul>
+        </div>
+        <div id="technologies" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Technologies Used</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (standalone components)</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Firebase Realtime Database</li>
+            <li>Angular Reactive Forms</li>
+            <li>Angular Router</li>
+            <li>GitHub Pages (for deployment)</li>
+            <li>Auth0 (for authentication)</li>
+          </ul>
+        </div>
+
+        <!-- Componenti -->
+        <div id="componenti" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Componenti Principali
+          </h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Componente</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Descrizione
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">CartComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Gestisce il carrello degli acquisti con visualizzazione
+                  articoli, calcolo totale e possibilità di rimozione.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ContactComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Form di contatto con validazione avanzata e feedback visivo.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">HomeComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Pagina principale con sezioni prodotti, best sellers,
+                  collezioni e newsletter.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">CardComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Componente riutilizzabile per la visualizzazione dei prodotti.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">CardReviewComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Gestisce la visualizzazione delle recensioni dei clienti.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  NewsLetterInputComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Componente per l'iscrizione alla newsletter.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">FooterComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Footer del sito con informazioni e link utili.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ManSectionComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Sezione dedicata ai prodotti per uomo.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  WomanSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Sezione dedicata ai prodotti per donna.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ProfileComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Gestione del profilo utente con autenticazione.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">AuthComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Gestione dell'autenticazione con Auth0.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="components" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Main Components</h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Component</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">CartComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Manages the shopping cart with item display, total calculation
+                  and removal option.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ContactComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Contact form with advanced validation and visual feedback.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">HomeComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Main page with product sections, best sellers, collections and
+                  newsletter.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">CardComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Reusable component for product display.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">CardReviewComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Manages customer reviews display.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  NewsLetterInputComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Component for newsletter subscription.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">FooterComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Site footer with information and useful links.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ManSectionComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Section dedicated to men's products.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  WomanSectionComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Section dedicated to women's products.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ProfileComponent</td>
+                <td class="border border-gray-600 p-2">
+                  User profile management with authentication.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">AuthComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Authentication management with Auth0.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Design e UI -->
+        <div id="design-ui" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Design e UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Interfaccia realizzata con Tailwind CSS</li>
+            <li>Approccio mobile-first e layout completamente responsive</li>
+            <li>Animazioni e transizioni fluide</li>
+            <li>Componenti UI riutilizzabili e consistenti</li>
+            <li>Ottimizzazione delle immagini per prestazioni</li>
+            <li>Feedback visivi per interazioni utente</li>
+          </ul>
+        </div>
+        <div id="design-ui" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Design and UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Interface built with Tailwind CSS</li>
+            <li>Mobile-first approach and fully responsive layout</li>
+            <li>Smooth animations and transitions</li>
+            <li>Reusable and consistent UI components</li>
+            <li>Image optimization for performance</li>
+            <li>Visual feedback for user interactions</li>
+          </ul>
+        </div>
+
+        <!-- Funzionalità -->
+        <div id="funzionalita" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Funzionalità Implementate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Gestione avanzata del carrello con Angular Signals</li>
+            <li>Form complessi con validazione reattiva</li>
+            <li>Fetching prodotti da Firebase Realtime Database</li>
+            <li>Routing tra sezioni uomo/donna</li>
+            <li>Newsletter con componenti dedicati</li>
+            <li>Gestione profilo utente</li>
+            <li>Autenticazione e login con Auth0</li>
+            <li>Responsive design per tutti i dispositivi</li>
+          </ul>
+        </div>
+        <div id="functionalities" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Implemented Features</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Advanced cart management with Angular Signals</li>
+            <li>Complex forms with reactive validation</li>
+            <li>Product fetching from Firebase Realtime Database</li>
+            <li>Routing between men/women sections</li>
+            <li>Newsletter with dedicated components</li>
+            <li>User profile management</li>
+            <li>Authentication and login with Auth0</li>
+            <li>Responsive design for all devices</li>
+          </ul>
+        </div>
+
+        <!-- Deploy -->
+        <div id="deploy" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Deploy</h3>
+          <p class="mt-2">
+            Il progetto è stato distribuito su GitHub Pages seguendo questi
+            passaggi:
+          </p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Build dell'applicazione Angular</li>
+            <li>Configurazione GitHub per il deploy automatico</li>
+          </ul>
+          <p class="mt-2">
+            L'applicazione è disponibile all'indirizzo:
+            <a
+              href="https://veronicadigiac.github.io/e-commerce/home"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://veronicadigiac.github.io/e-commerce/home
+            </a>
+          </p>
+          <p class="mt-2">
+            Il codice sorgente è disponibile su GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/e-commerce"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/e-commerce
+            </a>
+          </p>
+        </div>
+        <div id="deployment" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Deployment</h3>
+          <p class="mt-2">
+            The project was deployed on GitHub Pages following these steps:
+          </p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Building the Angular application</li>
+            <li>Configuring GitHub for automatic deployment</li>
+          </ul>
+          <p class="mt-2">
+            The application is available at:
+            <a
+              href="https://veronicadigiac.github.io/e-commerce/home"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://veronicadigiac.github.io/e-commerce/home
+            </a>
+          </p>
+          <p class="mt-2">
+            The source code is available on GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/e-commerce"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/e-commerce
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

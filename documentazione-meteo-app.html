@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Documentazione Progetto Meteo Angular</title>
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("lang", lang);
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "it";
+        switchLanguage(savedLang);
+      });
+    </script>
+  </head>
+  <body
+    class="bg-black text-white p-10"
+    style="font-family: 'Roboto', sans-serif"
+  >
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="flex justify-between items-start mb-10">
+        <div>
+          <button
+            onclick="switchLanguage('it')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg border border-blue-400 hover:border-white"
+          >
+            Italiano
+          </button>
+          <button
+            onclick="switchLanguage('en')"
+            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg border border-blue-400 hover:border-white"
+          >
+            English
+          </button>
+        </div>
+        <div class="flex flex-col items-end space-y-2">
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >About</a
+          >
+          <a
+            href="about.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >About</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Formazione</a
+          >
+          <a
+            href="education.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Education</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="it"
+            >Tech-stack</a
+          >
+          <a
+            href="tech-stack.html"
+            class="text-blue-400 hover:text-white text-xl font-semibold"
+            data-lang="en"
+            >Tech-stack</a
+          >
+        </div>
+      </div>
+
+      <!-- Titolo -->
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="it">
+        Documentazione Progetto Meteo
+      </h1>
+      <h1 class="text-2xl font-bold text-blue-400 mb-6" data-lang="en">
+        Weather Project Documentation
+      </h1>
+
+      <!-- Indice -->
+      <h2
+        id="indice"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="it"
+      >
+        Indice
+      </h2>
+      <h2
+        id="index"
+        class="text-xl font-semibold text-gray-300 mb-2"
+        data-lang="en"
+      >
+        Index
+      </h2>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="it"
+      >
+        <li><a href="#panoramica" class="hover:underline">Panoramica</a></li>
+        <li>
+          <a href="#tecnologie" class="hover:underline"
+            >Tecnologie Utilizzate</a
+          >
+        </li>
+        <li>
+          <a href="#componenti" class="hover:underline"
+            >Componenti Principali</a
+          >
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design e UI</a></li>
+        <li>
+          <a href="#funzionalita" class="hover:underline"
+            >Funzionalità Implementate</a
+          >
+        </li>
+        <li><a href="#deploy" class="hover:underline">Deploy</a></li>
+      </ul>
+      <ul
+        class="list-disc list-inside text-gray-400 mb-8 space-y-1"
+        data-lang="en"
+      >
+        <li><a href="#overview" class="hover:underline">Overview</a></li>
+        <li>
+          <a href="#technologies" class="hover:underline">Technologies Used</a>
+        </li>
+        <li>
+          <a href="#components" class="hover:underline">Main Components</a>
+        </li>
+        <li><a href="#design-ui" class="hover:underline">Design and UI</a></li>
+        <li>
+          <a href="#functionalities" class="hover:underline"
+            >Implemented Features</a
+          >
+        </li>
+        <li><a href="#deployment" class="hover:underline">Deployment</a></li>
+      </ul>
+
+      <!-- Sezioni -->
+      <section class="space-y-10 text-gray-300">
+        <!-- Panoramica -->
+        <div id="panoramica" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Panoramica</h3>
+          <p class="mt-2">
+            Il progetto è un'applicazione meteo realizzata con Angular che
+            permette di visualizzare le condizioni meteorologiche attuali e le
+            previsioni per i giorni successivi per qualsiasi città nel mondo.
+          </p>
+          <p class="mt-2">
+            L'applicazione utilizza le API di Open-Meteo per ottenere dati
+            precisi su temperatura, umidità, precipitazioni, vento, e
+            l'adattamento dell'interfaccia in base all'ora del giorno (modalità
+            giorno/notte).
+          </p>
+        </div>
+        <div id="overview" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Overview</h3>
+          <p class="mt-2">
+            The project is a weather application built with Angular that
+            displays current weather conditions and forecasts for upcoming days
+            for any city worldwide.
+          </p>
+          <p class="mt-2">
+            The application uses Open-Meteo APIs to get accurate data on
+            temperature, humidity, precipitation, wind, and the interface
+            adaptation based on the time of day (day/night mode).
+          </p>
+        </div>
+
+        <!-- Tecnologie -->
+        <div id="tecnologie" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Tecnologie Utilizzate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (componenti standalone)</li>
+            <li>TypeScript</li>
+            <li>RxJS (per la gestione degli Observable)</li>
+            <li>API Open-Meteo (geocoding e dati meteo)</li>
+            <li>BehaviorSubject per lo stato globale</li>
+            <li>CSS moderno con variabili custom</li>
+          </ul>
+        </div>
+        <div id="technologies" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Technologies Used</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Angular 17+ (standalone components)</li>
+            <li>TypeScript</li>
+            <li>RxJS (for Observable management)</li>
+            <li>Open-Meteo APIs (geocoding and weather data)</li>
+            <li>BehaviorSubject for global state</li>
+            <li>Modern CSS with custom variables</li>
+          </ul>
+        </div>
+
+        <!-- Componenti -->
+        <div id="componenti" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Componenti Principali
+          </h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Componente</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Descrizione
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">WeatherCardComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Componente principale che gestisce la logica dell'applicazione
+                  e coordina gli altri componenti.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  MeteoDetailsComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Visualizza i dettagli meteo principali (temperatura, umidità,
+                  etc.) con animazioni di entrata.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">NavbarComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Barra di ricerca per selezionare una nuova città.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">DayDetailsComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Mostra le previsioni giornaliere con temperatura min/max e
+                  orari di alba/tramonto.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ApiService</td>
+                <td class="border border-gray-600 p-2">
+                  Servizio che gestisce tutte le chiamate API e lo stato globale
+                  della città selezionata.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">RoundTempPipe</td>
+                <td class="border border-gray-600 p-2">
+                  Pipe personalizzata per arrotondare i valori di temperatura.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="components" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Main Components</h3>
+          <table class="table-auto w-full text-sm mt-4 border border-gray-600">
+            <thead class="bg-gray-800 text-gray-200">
+              <tr>
+                <th class="border border-gray-600 p-2 text-left">Component</th>
+                <th class="border border-gray-600 p-2 text-left">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-600 p-2">WeatherCardComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Main component that manages application logic and coordinates
+                  other components.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">
+                  MeteoDetailsComponent
+                </td>
+                <td class="border border-gray-600 p-2">
+                  Displays main weather details (temperature, humidity, etc.)
+                  with entry animations.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">NavbarComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Search bar to select a new city.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">DayDetailsComponent</td>
+                <td class="border border-gray-600 p-2">
+                  Shows daily forecasts with min/max temperature and
+                  sunrise/sunset times.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">ApiService</td>
+                <td class="border border-gray-600 p-2">
+                  Service that manages all API calls and global state of
+                  selected city.
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-600 p-2">RoundTempPipe</td>
+                <td class="border border-gray-600 p-2">
+                  Custom pipe to round temperature values.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Design e UI -->
+        <div id="design-ui" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Design e UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>
+              Interfaccia pulita e minimalista focalizzata sui dati essenziali
+            </li>
+            <li>Layout responsive che si adatta a tutti i dispositivi</li>
+            <li>Animazioni fluide per l'entrata dei componenti</li>
+            <li>Modalità giorno/notte automatica basata sull'ora locale</li>
+            <li>Grafica delle card intuitiva per le previsioni giornaliere</li>
+            <li>Icone intuitive per i diversi parametri meteo</li>
+          </ul>
+        </div>
+        <div id="design-ui" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Design and UI</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Clean and minimalist interface focused on essential data</li>
+            <li>Responsive layout that adapts to all devices</li>
+            <li>Smooth animations for component entry</li>
+            <li>Automatic day/night mode based on local time</li>
+            <li>Intuitive card design for daily forecasts</li>
+            <li>Clear icons for different weather parameters</li>
+          </ul>
+        </div>
+
+        <!-- Funzionalità -->
+        <div id="funzionalita" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">
+            Funzionalità Implementate
+          </h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>Ricerca città con geocoding per ottenere coordinate precise</li>
+            <li>Visualizzazione dati meteo in tempo reale</li>
+            <li>Previsioni giornaliere per i prossimi giorni</li>
+            <li>Gestione dello stato globale della città selezionata</li>
+            <li>Salvataggio locale dell'ultima città cercata</li>
+            <li>
+              Adattamento automatico all'ora del giorno (tema chiaro/scuro)
+            </li>
+            <li>Animazioni per migliorare l'esperienza utente</li>
+            <li>Gestione degli errori per chiamate API fallite</li>
+            <li>
+              Formattazione personalizzata dei dati (es. arrotondamento
+              temperature)
+            </li>
+          </ul>
+        </div>
+        <div id="functionalities" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Implemented Features</h3>
+          <ul class="list-disc list-inside mt-2">
+            <li>City search with geocoding for precise coordinates</li>
+            <li>Real-time weather data display</li>
+            <li>Daily forecasts for upcoming days</li>
+            <li>Global state management of selected city</li>
+            <li>Local storage of last searched city</li>
+            <li>Automatic adaptation to time of day (light/dark theme)</li>
+            <li>Animations to enhance user experience</li>
+            <li>Error handling for failed API calls</li>
+            <li>Custom data formatting (e.g. temperature rounding)</li>
+          </ul>
+        </div>
+
+        <!-- Deploy -->
+        <div id="deploy" data-lang="it">
+          <h3 class="text-xl font-semibold text-white">Deploy</h3>
+          <p class="mt-2">
+            Il progetto è stato distribuito online utilizzando il servizio di
+            hosting Netlify, garantendo una pubblicazione veloce e affidabile.
+          </p>
+          <p class="mt-2">
+            L'applicazione è disponibile all'indirizzo:
+            <a
+              href="https://meteoappangular.netlify.app/weather-card"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://meteoappangular.netlify.app/weather-card
+            </a>
+          </p>
+          <p class="mt-2">
+            Il codice sorgente è disponibile su GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/MeteoApp"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/MeteoApp
+            </a>
+          </p>
+        </div>
+        <div id="deployment" data-lang="en">
+          <h3 class="text-xl font-semibold text-white">Deployment</h3>
+          <p class="mt-2">
+            The project was deployed online using Netlify hosting service,
+            ensuring fast and reliable publishing.
+          </p>
+          <p class="mt-2">
+            The application is available at:
+            <a
+              href="https://meteoappangular.netlify.app/weather-card"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://meteoappangular.netlify.app/weather-card
+            </a>
+          </p>
+          <p class="mt-2">
+            The source code is available on GitHub:
+            <a
+              href="https://github.com/VeronicaDiGiac/MeteoApp"
+              class="text-blue-400 underline"
+              target="_blank"
+            >
+              https://github.com/VeronicaDiGiac/MeteoApp
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
