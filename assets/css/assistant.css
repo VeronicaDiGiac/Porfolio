@@ -1,0 +1,338 @@
+/* ==========================================================================
+   PF ARCHIVIO TECNOLOGICO — assistente mascotte (Unità FD.3.5)
+   Usa le custom properties definite in theme.css.
+   ========================================================================== */
+
+.assistant {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  max-width: min(20rem, calc(100vw - 2rem));
+  user-select: none;
+}
+
+.assistant[data-side="left"] {
+  align-items: flex-start;
+}
+
+.assistant[hidden] {
+  display: none;
+}
+
+/* ---- Figura / bottone -------------------------------------------------- */
+.assistant-figure {
+  width: 4.5rem;
+  height: 5.625rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  filter: drop-shadow(3px 3px 0 var(--ink));
+}
+
+.assistant-figure:active {
+  cursor: grabbing;
+}
+
+.assistant.is-dragging .assistant-figure {
+  cursor: grabbing;
+}
+
+.assistant-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---- Stati (data-state sull'svg root) ---------------------------------- */
+
+/* idle: respiro leggero */
+.assistant-svg[data-state="idle"] #body {
+  transform-origin: 60px 132px;
+  animation: assistant-breathe 4s ease-in-out infinite;
+}
+
+@keyframes assistant-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.02); }
+}
+
+/* blink ambientale, indipendente dalla coda play() */
+.assistant-svg.is-blinking #eye-left,
+.assistant-svg.is-blinking #eye-right {
+  transform: scaleY(0.12);
+  transition: transform 90ms ease;
+}
+.assistant-svg #eye-left { transform-origin: 44px 78px; transition: transform 140ms ease; }
+.assistant-svg #eye-right { transform-origin: 76px 78px; transition: transform 140ms ease; }
+
+/* lookAround */
+.assistant-svg[data-state="look-around"] #body {
+  transform-origin: 60px 100px;
+  animation: assistant-look-around 2.4s ease-in-out;
+}
+.assistant-svg[data-state="look-around"] #pupil-left,
+.assistant-svg[data-state="look-around"] #pupil-right {
+  animation: assistant-look-around-pupils 2.4s ease-in-out;
+}
+
+@keyframes assistant-look-around {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  70% { transform: rotate(3deg); }
+}
+@keyframes assistant-look-around-pupils {
+  0%, 100% { transform: translateX(0); }
+  20%, 40% { transform: translateX(-3px); }
+  60%, 80% { transform: translateX(3px); }
+}
+
+/* wave */
+.assistant-svg[data-state="wave"] #arm-right {
+  transform-origin: 106px 74px;
+  animation: assistant-wave 1.2s ease-in-out;
+}
+@keyframes assistant-wave {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(-32deg); }
+  40%, 80% { transform: rotate(-8deg); }
+}
+
+/* point (direzione via --point-angle) */
+.assistant-svg[data-direction="up"] #arm-right { --point-angle: -92deg; }
+.assistant-svg[data-direction="left"] #arm-right { --point-angle: -150deg; }
+.assistant-svg[data-direction="right"] #arm-right,
+.assistant-svg[data-state="point"]:not([data-direction]) #arm-right { --point-angle: -15deg; }
+
+.assistant-svg[data-state="point"] #arm-right {
+  transform-origin: 106px 74px;
+  animation: assistant-point 0.9s ease;
+}
+@keyframes assistant-point {
+  0% { transform: rotate(0deg); }
+  30%, 70% { transform: rotate(var(--point-angle, -20deg)); }
+  100% { transform: rotate(0deg); }
+}
+
+/* think */
+.assistant-svg[data-state="think"] #arm-left {
+  transform-origin: 14px 74px;
+  animation: assistant-think 2.2s ease-in-out;
+}
+@keyframes assistant-think {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(70deg); }
+  75% { transform: rotate(70deg); }
+}
+
+/* excited */
+.assistant-svg[data-state="excited"] #body {
+  transform-origin: 60px 132px;
+  animation: assistant-excited 1s ease-in-out;
+}
+.assistant-svg[data-state="excited"] #eye-left ellipse,
+.assistant-svg[data-state="excited"] #eye-right ellipse {
+  animation: assistant-excited-eyes 1s ease-in-out;
+}
+@keyframes assistant-excited {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-9px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-6px); }
+}
+@keyframes assistant-excited-eyes {
+  0%, 100% { fill: var(--paper); }
+  40% { fill: var(--signal-teal); }
+}
+
+/* confused */
+.assistant-svg[data-state="confused"] #brow-left { transform: rotate(-16deg); transform-origin: 51px 63px; }
+.assistant-svg[data-state="confused"] #brow-right { transform: rotate(10deg); transform-origin: 69px 63px; }
+.assistant-svg[data-state="confused"] #body {
+  transform-origin: 60px 132px;
+  animation: assistant-confused 1.4s ease-in-out;
+}
+@keyframes assistant-confused {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-5deg); }
+  50% { transform: rotate(4deg); }
+  80% { transform: rotate(-2deg); }
+}
+
+/* sleep */
+.assistant-svg[data-state="sleep"] #eye-left,
+.assistant-svg[data-state="sleep"] #eye-right {
+  transform: scaleY(0.12);
+}
+.assistant-svg[data-state="sleep"] #zzz {
+  animation: assistant-zzz-float 2.4s ease-in-out infinite;
+}
+.assistant-zzz {
+  opacity: 0;
+}
+.assistant-svg[data-state="sleep"] .assistant-zzz {
+  opacity: 1;
+}
+@keyframes assistant-zzz-float {
+  0% { transform: translateY(4px); opacity: 0.2; }
+  50% { transform: translateY(-6px); opacity: 1; }
+  100% { transform: translateY(-14px); opacity: 0; }
+}
+
+/* exit */
+.assistant-svg[data-state="exit"] {
+  transform-origin: center;
+  animation: assistant-exit 0.5s ease forwards;
+}
+@keyframes assistant-exit {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.15); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-svg[data-state] * {
+    animation: none !important;
+  }
+  .assistant-svg.is-blinking #eye-left,
+  .assistant-svg.is-blinking #eye-right {
+    transition: none;
+  }
+}
+
+/* ---- Balloon ------------------------------------------------------------ */
+.assistant-balloon {
+  width: 15.5rem;
+  background: var(--win-grey);
+  border: 2px solid #fff;
+  border-right-color: #6b6b6b;
+  border-bottom-color: #6b6b6b;
+  box-shadow: var(--shadow-hard);
+  position: relative;
+}
+
+.assistant-balloon__bar {
+  background: var(--win-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assistant-balloon__close {
+  width: 1.05rem;
+  height: 1.05rem;
+  background: var(--win-grey);
+  border: 1px solid #fff;
+  border-right-color: #6b6b6b;
+  border-bottom-color: #6b6b6b;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistant-balloon__body {
+  background: var(--paper);
+  margin: 0.55rem;
+  padding: 0.8rem;
+  border: 1px solid #6b6b6b;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  cursor: default;
+}
+
+.assistant-balloon__text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  min-height: 1.5em;
+}
+
+.assistant-balloon__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.assistant-balloon__action {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.65rem;
+  background: var(--paper-cool);
+  border: 1px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+}
+
+.assistant-balloon__action:hover {
+  background: var(--signal-red);
+  color: var(--paper);
+}
+
+.assistant-balloon__tail {
+  position: absolute;
+  bottom: -8px;
+  right: 1.6rem;
+  width: 14px;
+  height: 14px;
+  background: var(--win-grey);
+  border-right: 2px solid #6b6b6b;
+  border-bottom: 2px solid #6b6b6b;
+  transform: rotate(45deg);
+}
+
+.assistant[data-side="left"] .assistant-balloon__tail {
+  right: auto;
+  left: 1.6rem;
+}
+
+/* ---- Linguetta di richiamo ------------------------------------------------ */
+.assistant-tab {
+  position: fixed;
+  right: 0;
+  bottom: 1.75rem;
+  z-index: 60;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.6rem;
+  background: var(--signal-red);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+  border-right: none;
+  box-shadow: -2px 2px 0 var(--ink);
+}
+
+/* ---- Mobile: dimensioni ridotte, ancorata, non trascinabile --------------- */
+@media (max-width: 640px) {
+  .assistant {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    max-width: calc(100vw - 1.5rem);
+  }
+  .assistant-figure {
+    width: 3.4rem;
+    height: 4.25rem;
+    cursor: default;
+  }
+  .assistant-balloon {
+    width: min(14.5rem, calc(100vw - 2.5rem));
+  }
+}

@@ -1,596 +1,1096 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio di Veronica Di Giacomo, sviluppatrice front-end junior."
+      content="Veronica Di Giacomo — Front-end Developer. Archivio professionale: esperienza, competenze e progetti catalogati come schede tecniche."
     />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>Veronica Di Giacomo – Frontend Developer</title>
-    <script>
-      function switchLanguage(lang) {
-        localStorage.setItem("lang", lang);
-        document.querySelectorAll("[data-lang]").forEach((el) => {
-          el.style.display =
-            el.getAttribute("data-lang") === lang ? "block" : "none";
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const savedLang = localStorage.getItem("lang") || "it";
-        switchLanguage(savedLang);
-      });
-    </script>
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/assistant.css" />
+    <title>Veronica Di Giacomo — Front-end Developer</title>
   </head>
-  <body
-    class="bg-black text-white p-10"
-    style="font-family: 'Roboto', sans-serif"
-  >
-    <div class="max-w-6xl mx-auto">
-      <!-- Header Section -->
-      <div class="flex justify-between items-start mb-10">
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-          <button
-            onclick="switchLanguage('it')"
-            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-l-lg transition-colors duration-200 border border-blue-400 hover:border-white"
-          >
-            Italiano
-          </button>
-          <button
-            onclick="switchLanguage('en')"
-            class="bg-transparent hover:text-white text-blue-400 font-medium py-1 px-3 rounded-r-lg transition-colors duration-200 border border-blue-400 hover:border-white"
-          >
-            English
-          </button>
-        </div>
+  <body>
+    <nav class="site-nav" aria-label="Navigazione sezioni">
+      <a href="#hero" class="site-nav__brand">PF.000.2026 — V.D.G.</a>
+      <div class="site-nav__list">
+        <a href="#hero" class="site-nav__item is-active">
+          <span>00</span>
+          <span data-lang="it">Home</span><span data-lang="en">Home</span>
+        </a>
+        <a href="#chi-sono" class="site-nav__item">
+          <span>01</span>
+          <span data-lang="it">Chi sono</span><span data-lang="en">About</span>
+        </a>
+        <a href="#esperienza" class="site-nav__item">
+          <span>02</span>
+          <span data-lang="it">Esperienza</span><span data-lang="en">Experience</span>
+        </a>
+        <a href="#competenze" class="site-nav__item">
+          <span>03</span>
+          <span data-lang="it">Competenze</span><span data-lang="en">Skills</span>
+        </a>
+        <a href="#progetti" class="site-nav__item">
+          <span>04</span>
+          <span data-lang="it">Progetti</span><span data-lang="en">Projects</span>
+        </a>
+        <a href="#formazione" class="site-nav__item">
+          <span>05</span>
+          <span data-lang="it">Formazione</span><span data-lang="en">Education</span>
+        </a>
+        <a href="#contatti" class="site-nav__item">
+          <span>06</span>
+          <span data-lang="it">Contatti</span><span data-lang="en">Contact</span>
+        </a>
+      </div>
+      <div class="site-nav__lang">
+        <button type="button" data-lang-btn="it">IT</button>
+        <button type="button" data-lang-btn="en">EN</button>
+      </div>
+    </nav>
 
-        <!-- Navigation Links -->
-        <div class="flex flex-col items-end space-y-2">
-          <a
-            href="about.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="it"
-            >Su di me</a
-          >
-          <a
-            href="about.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="en"
-            >About me</a
-          >
-          <a
-            href="education.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="it"
-            >Formazione</a
-          >
-          <a
-            href="education.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="en"
-            >Education</a
-          >
-          <a
-            href="tech-stack.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="it"
-            >Tech Stack</a
-          >
-          <a
-            href="tech-stack.html"
-            class="text-blue-400 hover:text-white text-xl font-semibold"
-            data-lang="en"
-            >Tech Stack</a
-          >
+    <div class="progress-bar" aria-hidden="true">
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+      <span class="progress-bar__seg"></span>
+    </div>
+
+    <main>
+      <!-- ============ 00 HERO ============ -->
+      <section id="hero" data-section class="hero section reg-mark">
+        <div class="section-inner hero-grid">
+          <div>
+            <p class="label" data-lang="it">Archivio Professionale — Scheda 000</p>
+            <p class="label" data-lang="en">Professional Archive — Record 000</p>
+            <h1 class="hero-title">Veronica<br />Di Giacomo</h1>
+            <p class="hero-role" data-lang="it">Front-end Developer</p>
+            <p class="hero-role" data-lang="en">Front-end Developer</p>
+
+            <p class="hero-tagline reveal" data-lang="it">
+              Sviluppo interfacce enterprise con Angular 19 e Signals, dalla
+              libreria interna di componenti condivisi ai flussi realtime —
+              per applicativi dove l'affidabilità non è opzionale.
+            </p>
+            <p class="hero-tagline reveal" data-lang="en">
+              I build enterprise interfaces with Angular 19 and Signals — from
+              shared component libraries to realtime data flows — for
+              applications where reliability is not optional.
+            </p>
+
+            <div class="hero-meta reveal" data-lang="it">
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th>Anno</th>
+                    <td>2026</td>
+                  </tr>
+                  <tr>
+                    <th>Basata a</th>
+                    <td>Brindisi, Italia</td>
+                  </tr>
+                  <tr>
+                    <th>Stack</th>
+                    <td>Angular 19 · TypeScript · Signals · Kendo UI · SignalR</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>Disponibile per nuove opportunità</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="hero-meta reveal" data-lang="en">
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th>Year</th>
+                    <td>2026</td>
+                  </tr>
+                  <tr>
+                    <th>Based in</th>
+                    <td>Brindisi, Italy</td>
+                  </tr>
+                  <tr>
+                    <th>Stack</th>
+                    <td>Angular 19 · TypeScript · Signals · Kendo UI · SignalR</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>Open to new opportunities</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="hero-media reveal">
+            <span class="halftone-circle" style="width:16rem;height:16rem;top:-2rem;right:-2rem;"></span>
+            <span class="hero-dot" style="top:-1.5rem;left:-1.5rem;"></span>
+            <div class="media-slot" style="aspect-ratio:4/3; padding:0;">
+              <img
+                src="assets/img/pc1.jpg"
+                width="736"
+                height="801"
+                alt="Computer desktop vintage, in stile Macintosh, fotografato su fondo neutro"
+                style="position:absolute; left:-6%; top:-8%; width:112%; height:124%; object-fit:cover; object-position:center 20%; filter:grayscale(0.3) sepia(0.18) saturate(0.85) contrast(1.05);"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divisore floppy disk -->
+      <div class="floppy-block reveal">
+        <div class="floppy-block__icon">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Floppy disk 3.5 pollici">
+            <rect x="4" y="4" width="56" height="56" fill="var(--plastic)" stroke="var(--ink)" stroke-width="2" />
+            <rect x="4" y="4" width="34" height="16" fill="var(--ink)" />
+            <rect x="14" y="4" width="10" height="12" fill="var(--paper)" />
+            <rect x="12" y="26" width="40" height="28" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5" />
+            <rect x="18" y="32" width="28" height="4" fill="var(--ink-soft)" />
+            <rect x="18" y="40" width="20" height="3" fill="var(--ink-soft)" />
+          </svg>
+        </div>
+        <div class="floppy-block__card" data-lang="it">
+          <span><strong>Oggetto</strong> Floppy disk 3,5"</span>
+          <span><strong>Cat. n.</strong> FD.3.5–034</span>
+          <span><strong>Capacità</strong> 1.44 MB</span>
+          <span><strong>Dimensioni</strong> 90 × 94 × 3 mm</span>
+          <span><strong>Materiale</strong> Policarbonato</span>
+        </div>
+        <div class="floppy-block__card" data-lang="en">
+          <span><strong>Object</strong> 3.5" floppy disk</span>
+          <span><strong>Cat. no.</strong> FD.3.5–034</span>
+          <span><strong>Capacity</strong> 1.44 MB</span>
+          <span><strong>Size</strong> 90 × 94 × 3 mm</span>
+          <span><strong>Material</strong> Polycarbonate</span>
         </div>
       </div>
 
-      <!-- Main Content -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-700 pt-10"
-      >
-        <!-- Left Column -->
-        <div class="space-y-8">
-          <div>
-            <h1 class="text-2xl font-bold" data-lang="it">
-              Veronica Di Giacomo
-            </h1>
-            <h1 class="text-2xl font-bold" data-lang="en">
-              Veronica Di Giacomo
-            </h1>
-            <p class="text-lg text-gray-400" data-lang="it">
-              Sviluppatrice Frontend Junior
-            </p>
-            <p class="text-lg text-gray-400" data-lang="en">
-              Junior Frontend Developer
-            </p>
+      <!-- ============ 01 CHI SONO ============ -->
+      <section id="chi-sono" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">01</span>
+            <h2 class="section-head__title" data-lang="it">Chi sono</h2>
+            <h2 class="section-head__title" data-lang="en">About</h2>
+            <span class="doc-code section-head__code">PF.001.2026</span>
           </div>
 
-          <p class="text-gray-300" data-lang="it">
-            Sono una Sviluppatrice Front-End Junior con un anno e mezzo di
-            apprendimento pratico ed esperienza in progetti. Mi specializzo
-            nella creazione di interfacce pulite e responsive e ho anche
-            competenze di base nello sviluppo backend, che mi permettono di
-            contribuire a tutto lo stack quando necessario.
-          </p>
-          <p class="text-gray-300" data-lang="en">
-            I'm a Junior Front-End Developer with one and a half years of
-            hands-on learning and project experience. I specialize in building
-            clean, responsive interfaces and also have foundational skills in
-            backend development, allowing me to contribute across the full stack
-            when needed.
-          </p>
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--left reveal" data-parallax style="--decor-ratio:213/200; --decor-rot:-3deg; top:2rem;">
+              <div class="decor-figure__frame">
+                <img src="assets/img/clippy.gif" width="213" height="200" loading="lazy" alt="" aria-hidden="true" />
+              </div>
+            </figure>
+          </div>
 
-          <div class="space-y-2 border-t border-gray-700 pt-6">
-            <p data-lang="it">
-              <a class="text-blue-400 hover:underline">Brindisi - Italia</a>
-            </p>
-            <p data-lang="en">
-              <a class="text-blue-400 hover:underline">Brindisi - Italy</a>
-            </p>
-            <p>
-              <a
-                href="mailto:veronicadigiacomo190@gmail.com"
-                class="text-blue-400 hover:underline"
-                >veronicadigiacomo190@gmail.com ↗</a
-              >
-            </p>
-            <p>
-              <a href="tel:3467133115" class="text-blue-400 hover:underline"
-                >(+39) 346 7133115 ↗</a
-              >
-            </p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/veronicadg/"
-                class="text-blue-400 hover:underline"
-                >LinkedIn ↗</a
-              >
-            </p>
-            <p>
-              <a
-                href="https://github.com/VeronicaDiGiac"
-                class="text-blue-400 hover:underline"
-                >Github ↗</a
-              >
-            </p>
+          <div class="about-grid">
+            <div class="about-copy has-decor-left reveal" data-lang="it">
+              <p>
+                Mi chiamo Veronica, sono nata in Puglia (Italia) il 30 luglio
+                1994. Non ho mai creduto che si debba fare "una sola cosa
+                nella vita". Infatti, ho fatto esperienze diverse che mi
+                hanno portata fino a qui.
+              </p>
+              <p>
+                Mi sono diplomata in un istituto per i servizi sociali, dove
+                ho avuto la possibilità (e l'onore) di lavorare con persone
+                con disabilità e non. Esperienze che mi hanno lasciato un
+                segno profondo e mi hanno insegnato il valore dell'ascolto,
+                della presenza e della gentilezza.
+              </p>
+              <p>
+                Ho fatto la cameriera, la segretaria in uno studio di
+                amministrazione condominiale, e tante altre cose che mi hanno
+                aiutata a capire chi sono e chi non voglio essere.
+              </p>
+              <p>
+                Nel frattempo ho coltivato due grandi amori: la musica e la
+                scrittura. Ho studiato pianoforte in conservatorio (e anche
+                privatamente), e ogni tanto mi perdo a suonare o a scrivere
+                di getto quando qualcosa mi smuove.
+              </p>
+              <p>
+                Quando ho conosciuto il mio attuale compagno sono partita per
+                l'Olanda per raggiungerlo. Lì ho lavorato come addetta
+                vendita in Primark Utrecht e in un forno, ho stretto
+                amicizie con persone da ogni parte del mondo e capito che non
+                serve parlare la stessa lingua per sentirsi a casa. Fino a
+                quando sono tornata in Italia per stare più vicina alla mia
+                famiglia, mio nipote e i miei amici.
+              </p>
+              <p>
+                Negli ultimi anni mi sono appassionata al coding. Ho iniziato
+                un po' per gioco, fino a quando non ho deciso di volerne fare
+                un lavoro. Lo trovo stimolante, in continua evoluzione, e mi
+                permette di affrontare sempre nuove sfide.
+              </p>
+              <p>
+                Nel tempo libero amo guardare film e serie tv, e ritrovarmi
+                intorno a un tavolo con gli amici per una cena e un bel gioco
+                da tavolo.
+              </p>
+            </div>
+            <div class="about-copy has-decor-left reveal" data-lang="en">
+              <p>
+                My name is Veronica, I was born in Puglia (Italy) on July 30,
+                1994. I've never believed we should do just "one thing" in
+                life. In fact, I've had many different experiences that
+                brought me here.
+              </p>
+              <p>
+                I graduated from a social services school, where I had the
+                chance — and honor — to work with people with and without
+                disabilities. Those experiences deeply shaped me and taught
+                me the value of listening, presence and kindness.
+              </p>
+              <p>
+                I've worked as a waitress, a secretary in a property
+                management office, and many other things that helped me
+                understand who I am and who I don't want to be.
+              </p>
+              <p>
+                Meanwhile, I cultivated two great passions: music and
+                writing. I studied piano at the conservatory — and also
+                privately — and I still love to play or write freely
+                whenever something stirs me emotionally.
+              </p>
+              <p>
+                When I met my current partner, I moved to the Netherlands to
+                be with him. There, I worked as a sales assistant at Primark
+                in Utrecht and in a bakery. I made friends from all over the
+                world and discovered that you don't need to speak the same
+                language to feel at home — until I came back to Italy to be
+                closer to my family, my nephew and my friends.
+              </p>
+              <p>
+                In the last few years, I discovered coding. I started as a
+                hobby and eventually decided to turn it into a career. I
+                find it stimulating, ever-evolving and full of new
+                challenges to embrace.
+              </p>
+              <p>
+                In my free time, I love watching movies and TV shows, and
+                sitting around a table with friends for dinner and a good
+                board game.
+              </p>
+            </div>
+
+            <aside class="margin-notes reveal">
+              <p class="margin-note">
+                <strong>1994</strong>
+                <span data-lang="it">Nata in Puglia, 30 luglio</span>
+                <span data-lang="en">Born in Puglia, July 30</span>
+              </p>
+              <p class="margin-note">
+                <strong>Brindisi</strong>
+                <span data-lang="it">Base operativa attuale</span>
+                <span data-lang="en">Current base</span>
+              </p>
+              <p class="margin-note">
+                <strong>Utrecht</strong>
+                <span data-lang="it">Parentesi olandese</span>
+                <span data-lang="en">Dutch chapter</span>
+              </p>
+              <p class="margin-note">
+                <strong data-lang="it">Conservatorio</strong>
+                <strong data-lang="en">Conservatory</strong>
+                <span data-lang="it">Pianoforte classico, "Nino Rota"</span>
+                <span data-lang="en">Classical piano, "Nino Rota"</span>
+              </p>
+              <p class="margin-note">
+                <strong data-lang="it">Coding</strong>
+                <strong data-lang="en">Coding</strong>
+                <span data-lang="it">Da hobby a professione</span>
+                <span data-lang="en">From hobby to profession</span>
+              </p>
+            </aside>
+          </div>
+
+          <div class="barcode-block reveal">
+            <svg viewBox="0 0 180 32" style="color:var(--ink);" aria-hidden="true">
+              <rect x="0" y="0" width="2" height="32" fill="currentColor" /><rect x="4" y="0" width="1" height="32" fill="currentColor" /><rect x="7" y="0" width="3" height="32" fill="currentColor" /><rect x="12" y="0" width="1" height="32" fill="currentColor" /><rect x="15" y="0" width="2" height="32" fill="currentColor" /><rect x="19" y="0" width="4" height="32" fill="currentColor" /><rect x="25" y="0" width="1" height="32" fill="currentColor" /><rect x="28" y="0" width="2" height="32" fill="currentColor" /><rect x="32" y="0" width="1" height="32" fill="currentColor" /><rect x="35" y="0" width="3" height="32" fill="currentColor" /><rect x="40" y="0" width="1" height="32" fill="currentColor" /><rect x="43" y="0" width="2" height="32" fill="currentColor" /><rect x="47" y="0" width="1" height="32" fill="currentColor" /><rect x="50" y="0" width="4" height="32" fill="currentColor" /><rect x="56" y="0" width="1" height="32" fill="currentColor" /><rect x="59" y="0" width="2" height="32" fill="currentColor" /><rect x="63" y="0" width="1" height="32" fill="currentColor" /><rect x="66" y="0" width="3" height="32" fill="currentColor" /><rect x="71" y="0" width="1" height="32" fill="currentColor" /><rect x="74" y="0" width="2" height="32" fill="currentColor" /><rect x="78" y="0" width="4" height="32" fill="currentColor" /><rect x="84" y="0" width="1" height="32" fill="currentColor" /><rect x="87" y="0" width="2" height="32" fill="currentColor" /><rect x="91" y="0" width="1" height="32" fill="currentColor" /><rect x="94" y="0" width="3" height="32" fill="currentColor" />
+            </svg>
+            <span class="doc-code">PF.001.2026</span>
           </div>
         </div>
+      </section>
 
-        <!-- Right Column -->
-        <div class="space-y-8">
-          <div>
-            <h2
-              class="text-xl font-semibold text-blue-500 uppercase"
-              data-lang="it"
-            >
-              Progetti Freelance
-            </h2>
-            <h2
-              class="text-xl font-semibold text-blue-500 uppercase"
-              data-lang="en"
-            >
-              Freelance Projects
-            </h2>
-            <div class="mt-4 space-y-6 border-t border-gray-700 pt-4">
-              <div>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://resplendent-hotteok-7bf818.netlify.app/home"
-                    class="text-blue-300"
-                    data-lang="it"
-                    >Sito Vetrina per Professionista Medico Psicologo</a
-                  >
-                </h3>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://resplendent-hotteok-7bf818.netlify.app/home"
-                    class="text-blue-300"
-                    data-lang="en"
-                    >Showcase Website for a Freelance Professional</a
-                  >
-                </h3>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
-                  Sviluppo di un sito web per promuovere servizi di consulenza
-                  psicologica, con informazioni sui servizi offerti, un modulo
-                  di contatto e una sezione dedicata ai percorsi terapeutici.
-                </h4>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                  Development of a website to promote psychological counseling
-                  services, including information about services offered, a
-                  contact form, and a section dedicated to therapeutic paths.
-                </h4>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="it"
-                >
+      <!-- ============ 02 ESPERIENZA ============ -->
+      <section id="esperienza" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">02</span>
+            <h2 class="section-head__title" data-lang="it">Esperienza</h2>
+            <h2 class="section-head__title" data-lang="en">Experience</h2>
+            <span class="doc-code section-head__code">PF.002.2026</span>
+          </div>
+
+          <p class="section-intro reveal" data-lang="it">
+            Due anni di lavoro sul campo, dai siti vetrina per piccoli
+            professionisti a un applicativo enterprise per la gestione
+            operativa di una flotta aerea di soccorso. Ogni scheda qui sotto
+            riporta ruolo, periodo e i moduli di cui mi sono occupata.
+          </p>
+          <p class="section-intro reveal" data-lang="en">
+            Two years of hands-on work, from showcase sites for independent
+            professionals to an enterprise application for the operational
+            management of a rescue air fleet. Each record below lists role,
+            period and the modules I worked on.
+          </p>
+
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--right reveal" data-parallax style="--decor-ratio:736/847; --decor-rot:3deg; top:1rem;">
+              <div class="decor-figure__frame">
+                <img src="assets/img/pc2.jpg" width="736" height="847" loading="lazy" alt="" aria-hidden="true" />
+              </div>
+            </figure>
+          </div>
+
+          <div class="timeline has-decor-right">
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">01</span>
+              <div class="timeline-item__body">
+                <h3 data-lang="it">IAS — Integrated Aerospace System</h3>
+                <h3 data-lang="en">IAS — Integrated Aerospace System</h3>
+                <div class="timeline-item__meta">
+                  <span data-lang="it">Sviluppatrice Front-end</span>
+                  <span data-lang="en">Front-end Developer</span>
+                  <span>Ago 2025 — <span class="status" data-lang="it">in corso</span><span class="status" data-lang="en">present</span></span>
+                </div>
+                <p class="timeline-item__desc" data-lang="it">
+                  Applicativo web per la gestione operativa della flotta
+                  aerea di un ente pubblico di soccorso: pianificazione
+                  voli, composizione equipaggi e allerta in emergenza.
+                </p>
+                <p class="timeline-item__desc" data-lang="en">
+                  Web application for the operational management of a public
+                  rescue organization's air fleet: flight planning, crew
+                  composition and emergency alerting.
+                </p>
+                <ul class="timeline-item__list" data-lang="it">
                   <li>
-                    <a
-                      href="documentazione-progetto-psicologa.html"
-                      class="hover:text-blue-300"
-                      >Documentazione del progetto</a
-                    >
+                    Contributor principale su diversi moduli operativi
+                    dell'applicazione, con gestione autonoma dell'intero
+                    ciclo di sviluppo frontend: analisi dei requisiti,
+                    implementazione, testing e manutenzione.
                   </li>
                   <li>
-                    <a
-                      href="https://resplendent-hotteok-7bf818.netlify.app/home"
-                      class="hover:text-blue-300"
-                      >Link per visualizzare il sito</a
-                    >
+                    Progettazione di feature complete (grid, form, dialog)
+                    con componenti standalone Angular 19 e Signals, secondo
+                    un'architettura a servizi separati (ApiService,
+                    ViewModel, Service di orchestrazione, CrudService)
+                    riusata in modo coerente in tutta l'applicazione.
+                  </li>
+                  <li>
+                    Realizzazione di grid configurabili (colonne, toolbar,
+                    export PDF/Excel, permessi) con Kendo UI 20 e form
+                    generati dinamicamente da DTO validati con
+                    class-validator, riutilizzati in più punti
+                    dell'applicazione.
+                  </li>
+                  <li>
+                    Sviluppo di interazioni drag &amp; drop custom per
+                    l'assegnazione rapida di risorse in scenari di
+                    emergenza, inclusa la risoluzione di bug di
+                    compatibilità cross-browser.
+                  </li>
+                  <li>
+                    Contributo alla libreria interna di componenti condivisi
+                    e al client API REST generato da OpenAPI/Swagger,
+                    utilizzati trasversalmente da tutto il team.
+                  </li>
+                  <li>
+                    Gestione di aggiornamenti realtime con SignalR,
+                    localizzazione dell'interfaccia con ngx-translate e
+                    gestione dei permessi utente in modo dichiarativo.
                   </li>
                 </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="en"
-                >
+                <ul class="timeline-item__list" data-lang="en">
                   <li>
-                    <a
-                      href="documentazione-progetto-psicologa.html"
-                      class="hover:text-blue-300"
-                      >Project documentation</a
-                    >
+                    Main contributor across several operational modules of
+                    the application, independently owning the full frontend
+                    development cycle: requirements analysis,
+                    implementation, testing and maintenance.
                   </li>
                   <li>
-                    <a
-                      href="https://resplendent-hotteok-7bf818.netlify.app/home"
-                      class="hover:text-blue-300"
-                      >Link to view the site</a
-                    >
+                    Designed complete features (grids, forms, dialogs) with
+                    Angular 19 standalone components and Signals, following
+                    a layered service architecture (ApiService, ViewModel,
+                    orchestration Service, CrudService) applied consistently
+                    across the app.
+                  </li>
+                  <li>
+                    Built configurable grids (columns, toolbar, PDF/Excel
+                    export, permissions) with Kendo UI 20 and forms
+                    generated dynamically from DTOs validated with
+                    class-validator, reused across multiple areas of the
+                    application.
+                  </li>
+                  <li>
+                    Developed custom drag &amp; drop interactions for fast
+                    resource assignment in emergency scenarios, including
+                    cross-browser compatibility fixes.
+                  </li>
+                  <li>
+                    Contributed to the internal shared component library and
+                    to the REST API client generated from OpenAPI/Swagger,
+                    used across the whole team.
+                  </li>
+                  <li>
+                    Managed realtime updates with SignalR, localized the
+                    interface with ngx-translate, and handled user
+                    permissions declaratively.
                   </li>
                 </ul>
               </div>
+            </div>
 
-              <!-- Progetto: Osteopata -->
-              <div>
-                <h3 class="font-semibold text-white">
-                  <span class="text-blue-300" data-lang="it">
-                    Sito Web per Professionista Medico Fisioterapista
-                  </span>
-                </h3>
-                <h3 class="font-semibold text-white">
-                  <span class="text-blue-300" data-lang="en">
-                    Website for Medical Professional
-                  </span>
-                </h3>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
-                  Sviluppo di un sito web professionale per un osteopata e
-                  fisioterapista, realizzato come sviluppatrice presso Flow
-                  Agency. Il progetto includeva la creazione di sezioni
-                  informative, gestione dei contenuti e ottimizzazione UX/UI.
-                </h4>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                  Development of a professional website for an osteopath and
-                  physiotherapist, built as a freelance developer at Flow
-                  Agency. The project included informative sections, content
-                  management, and UX/UI optimization.
-                </h4>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="it"
-                >
-                  <li>Sviluppato in autonomia</li>
-                  <li>Focus su usabilità e design chiaro</li>
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">02</span>
+              <div class="timeline-item__body">
+                <h3>Flow Agency</h3>
+                <div class="timeline-item__meta">
+                  <span data-lang="it">Sviluppatrice Front-end (collaborazione freelance)</span>
+                  <span data-lang="en">Front-end Developer (freelance collaboration)</span>
+                  <span>2024</span>
+                </div>
+                <p class="timeline-item__desc" data-lang="it">
+                  Collaborazione come sviluppatrice front-end freelance con
+                  Flow Agency su progetti per clienti nel settore sanitario e
+                  industriale.
+                </p>
+                <p class="timeline-item__desc" data-lang="en">
+                  Freelance front-end development collaboration with Flow
+                  Agency on projects for clients in the healthcare and
+                  industrial sectors.
+                </p>
+                <ul class="timeline-item__list" data-lang="it">
                   <li>
-                    <a
-                      href="https://fisioterapiaosteopatiadesantis.com/"
-                      class="hover:text-blue-300"
-                      >Link per visualizzare il sito</a
-                    >
+                    Sviluppo di un sito web professionale per un osteopata e
+                    fisioterapista: sezioni informative, gestione dei
+                    contenuti e ottimizzazione UX/UI, sviluppato in
+                    autonomia.
                   </li>
-                </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="en"
-                >
-                  <li>Developed independently as an external contributor</li>
-                  <li>Focus on usability and clean design</li>
-                  <li>Integration with booking tools</li>
-                </ul>
-              </div>
-
-              <!-- Progetto: Depuratori acqua -->
-              <div>
-                <h3 class="font-semibold text-white">
-                  <span class="text-blue-300" data-lang="it">
-                    Sito Web per Azienda di Trattamento Acque - in corso
-                  </span>
-                </h3>
-                <h3 class="font-semibold text-white">
-                  <span class="text-blue-300" data-lang="en">
-                    Website for Water Treatment Business
-                  </span>
-                </h3>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
-                  Realizzazione di un sito per un'azienda nel settore
-                  depurazione acqua, come sviluppatrice presso Flow Agency. Ho
-                  curato l'architettura informativa, UX/UI, collaborato con il
-                  team per la brand identity e le strategie di marketing.
-                </h4>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                  Showcase website for a water purification business, developed
-                  during a freelance collaboration with Flow Agency. I handled
-                  information architecture and technical product interfaces.
-                </h4>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="it"
-                >
+                  <li>
+                    Realizzazione di un sito per un'azienda di trattamento
+                    acque: architettura informativa, UX/UI, collaborazione
+                    con il team per brand identity e strategie di marketing.
+                  </li>
                   <li>
                     Sviluppo di un calcolatore interattivo per stimare il
-                    risparmio annuo derivante dall’uso dei depuratori.
+                    risparmio annuo derivante dall'uso dei depuratori.
                   </li>
                   <li>
-                    Realizzazione di un’interfaccia responsive e ottimizzata per
-                    dispositivi mobili.
+                    Interfaccia responsive ottimizzata per dispositivi
+                    mobili, realizzata con HTML, Tailwind CSS e JavaScript.
                   </li>
-                  <li>
-                    Attenzione a semplicità d’uso, chiarezza dei contenuti e
-                    performance del sito.
-                  </li>
-                  <li>Utilizzo di HTML,Tailwind CSS,Javascript</li>
                 </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="en"
-                >
-                  <li>Role: Freelance Front-end Developer</li>
-                  <li>Product catalogs with advanced filters</li>
-                  <li>Mobile-adaptive design</li>
+                <ul class="timeline-item__list" data-lang="en">
+                  <li>
+                    Developed a professional website for an osteopath and
+                    physiotherapist: informative sections, content
+                    management and UX/UI optimization, built independently.
+                  </li>
+                  <li>
+                    Built a website for a water-treatment company:
+                    information architecture, UX/UI, collaborating with the
+                    team on brand identity and marketing strategy.
+                  </li>
+                  <li>
+                    Built an interactive calculator estimating annual
+                    savings from water purifiers.
+                  </li>
+                  <li>
+                    Responsive, mobile-optimized interface built with HTML,
+                    Tailwind CSS and JavaScript.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div>
-            <h2
-              class="text-xl font-semibold text-blue-500 uppercase"
-              data-lang="it"
-            >
-              Progetti Personali
-            </h2>
-            <h2
-              class="text-xl font-semibold text-blue-500 uppercase"
-              data-lang="en"
-            >
-              Personal Projects
-            </h2>
-            <!-- NUOVO PROGETTO: Cineverse -->
-            <div>
-              <h3 class="font-semibold text-white mt-3">
-                <span class="text-blue-300" data-lang="it">
-                  Cineverse — Piattaforma Articoli & Recensioni (in sviluppo)
-                </span>
-              </h3>
-              <h3 class="font-semibold text-white mt-3">
-                <span class="text-blue-300" data-lang="en">
-                  Cineverse — Articles & Reviews Platform (in development)
-                </span>
-              </h3>
-              <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
-                Piattaforma full‑stack, attualmente in fase di sviluppo, dove
-                sarà possibile pubblicare articoli e recensioni sul cinema, con
-                sistema di votazione interattivo. Prevede frontend e backend.
-              </h4>
-              <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                A full‑stack platform, currently under development, to publish
-                movie articles and reviews, featuring an interactive voting
-                system. Includes both frontend and backend.
-              </h4>
-              <ul
-                class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                data-lang="it"
-              >
-                <li>Frontend: Angular</li>
-                <li>Backend: sviluppo dedicato + Payload CMS</li>
-                <li>
-                  Funzionalità: pubblicazione articoli/recensioni, votazioni
-                  interattive
-                </li>
-                <li>Stato: in fase di sviluppo</li>
-              </ul>
-              <ul
-                class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                data-lang="en"
-              >
-                <li>Frontend: Angular</li>
-                <li>Backend: custom backend + Payload CMS</li>
-                <li>
-                  Features: articles/reviews publishing, interactive voting
-                </li>
-                <li>Status: in development</li>
-              </ul>
-              <!-- Se hai URL demo o repo, aggiungili qui sotto -->
-              <!--
-                <ul class="list-disc list-inside text-gray-400 space-y-1 mt-4" data-lang="it">
-                  <li><a href="#" class="hover:text-blue-300">Anteprima live</a></li>
-                  <li><a href="#" class="hover:text-blue-300">Repository GitHub</a></li>
-                </ul>
-                <ul class="list-disc list-inside text-gray-400 space-y-1 mt-4" data-lang="en">
-                  <li><a href="#" class="hover:text-blue-300">Live preview</a></li>
-                  <li><a href="#" class="hover:text-blue-300">GitHub repository</a></li>
-                </ul>
-                -->
+          <div class="barcode-block reveal">
+            <svg viewBox="0 0 180 32" style="color:var(--ink);" aria-hidden="true">
+              <rect x="0" y="0" width="3" height="32" fill="currentColor" /><rect x="5" y="0" width="1" height="32" fill="currentColor" /><rect x="8" y="0" width="2" height="32" fill="currentColor" /><rect x="12" y="0" width="4" height="32" fill="currentColor" /><rect x="18" y="0" width="1" height="32" fill="currentColor" /><rect x="21" y="0" width="2" height="32" fill="currentColor" /><rect x="25" y="0" width="1" height="32" fill="currentColor" /><rect x="28" y="0" width="3" height="32" fill="currentColor" /><rect x="33" y="0" width="1" height="32" fill="currentColor" /><rect x="36" y="0" width="2" height="32" fill="currentColor" /><rect x="40" y="0" width="4" height="32" fill="currentColor" /><rect x="46" y="0" width="1" height="32" fill="currentColor" /><rect x="49" y="0" width="2" height="32" fill="currentColor" /><rect x="53" y="0" width="1" height="32" fill="currentColor" /><rect x="56" y="0" width="3" height="32" fill="currentColor" /><rect x="61" y="0" width="1" height="32" fill="currentColor" /><rect x="64" y="0" width="2" height="32" fill="currentColor" /><rect x="68" y="0" width="1" height="32" fill="currentColor" /><rect x="71" y="0" width="4" height="32" fill="currentColor" /><rect x="77" y="0" width="1" height="32" fill="currentColor" /><rect x="80" y="0" width="2" height="32" fill="currentColor" /><rect x="84" y="0" width="1" height="32" fill="currentColor" /><rect x="87" y="0" width="3" height="32" fill="currentColor" /><rect x="92" y="0" width="1" height="32" fill="currentColor" /><rect x="95" y="0" width="2" height="32" fill="currentColor" />
+            </svg>
+            <span class="doc-code">PF.002.2026</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03 COMPETENZE ============ -->
+      <section id="competenze" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">03</span>
+            <h2 class="section-head__title" data-lang="it">Competenze</h2>
+            <h2 class="section-head__title" data-lang="en">Skills</h2>
+            <span class="doc-code section-head__code">PF.003.2026</span>
+          </div>
+
+          <p class="section-intro reveal" data-lang="it">
+            Lo stack che uso ogni giorno, organizzato come una scheda di
+            specifiche tecniche: linguaggi, framework, strumenti UI, pattern
+            architetturali e tooling di supporto.
+          </p>
+          <p class="section-intro reveal" data-lang="en">
+            The stack I use every day, organized like a technical
+            specification sheet: languages, frameworks, UI tools,
+            architectural patterns and supporting tooling.
+          </p>
+
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--left reveal" data-parallax style="--decor-ratio:736/887; --decor-rot:-2deg; top:1rem;">
+              <div class="decor-figure__frame">
+                <img src="assets/img/paint.jpg" width="736" height="887" loading="lazy" alt="" aria-hidden="true" />
+              </div>
+            </figure>
+          </div>
+
+          <div class="spec-grid has-decor-left reveal">
+            <table class="spec-table">
+              <caption data-lang="it">Linguaggi</caption>
+              <caption data-lang="en">Languages</caption>
+              <tbody>
+                <tr><th>L.01</th><td>HTML5</td></tr>
+                <tr><th>L.02</th><td>CSS3</td></tr>
+                <tr><th>L.03</th><td>JavaScript (ES6+)</td></tr>
+                <tr><th>L.04</th><td>TypeScript</td></tr>
+                <tr><th>L.05</th><td>Java</td></tr>
+                <tr><th>L.06</th><td>SQL</td></tr>
+              </tbody>
+            </table>
+
+            <table class="spec-table">
+              <caption data-lang="it">Framework</caption>
+              <caption data-lang="en">Frameworks</caption>
+              <tbody>
+                <tr><th>F.01</th><td>Angular 19</td></tr>
+                <tr><th>F.02</th><td>Signals</td></tr>
+                <tr><th>F.03</th><td>Standalone Components</td></tr>
+                <tr><th>F.04</th><td>NestJS <span data-lang="it">(fondamenti)</span><span data-lang="en">(fundamentals)</span></td></tr>
+              </tbody>
+            </table>
+
+            <table class="spec-table">
+              <caption data-lang="it">UI &amp; Styling</caption>
+              <caption data-lang="en">UI &amp; Styling</caption>
+              <tbody>
+                <tr><th>U.01</th><td>Kendo UI 20</td></tr>
+                <tr><th>U.02</th><td>Tailwind CSS</td></tr>
+                <tr><th>U.03</th><td>Bootstrap</td></tr>
+                <tr><th>U.04</th><td data-lang="it">Responsive / Mobile First</td><td data-lang="en">Responsive / Mobile First</td></tr>
+              </tbody>
+            </table>
+
+            <table class="spec-table">
+              <caption data-lang="it">Architettura</caption>
+              <caption data-lang="en">Architecture</caption>
+              <tbody>
+                <tr><th>A.01</th><td data-lang="it">ApiService / ViewModel / Orchestrazione / CrudService</td><td data-lang="en">ApiService / ViewModel / Orchestration / CrudService</td></tr>
+                <tr><th>A.02</th><td data-lang="it">Client REST da OpenAPI/Swagger</td><td data-lang="en">REST client from OpenAPI/Swagger</td></tr>
+                <tr><th>A.03</th><td data-lang="it">SignalR (realtime)</td><td data-lang="en">SignalR (realtime)</td></tr>
+                <tr><th>A.04</th><td data-lang="it">class-validator (DTO)</td><td data-lang="en">class-validator (DTOs)</td></tr>
+                <tr><th>A.05</th><td data-lang="it">ngx-translate (i18n)</td><td data-lang="en">ngx-translate (i18n)</td></tr>
+              </tbody>
+            </table>
+
+            <table class="spec-table">
+              <caption data-lang="it">Tooling</caption>
+              <caption data-lang="en">Tooling</caption>
+              <tbody>
+                <tr><th>T.01</th><td>Git</td></tr>
+                <tr><th>T.02</th><td>Postman</td></tr>
+                <tr><th>T.03</th><td>Docker</td></tr>
+                <tr><th>T.04</th><td>Payload CMS</td></tr>
+                <tr><th>T.05</th><td>JWT <span data-lang="it">(autenticazione)</span><span data-lang="en">(authentication)</span></td></tr>
+                <tr><th>T.06</th><td data-lang="it">ER Diagramming</td><td data-lang="en">ER Diagramming</td></tr>
+                <tr><th>T.07</th><td>VS Code · Eclipse</td></tr>
+              </tbody>
+            </table>
+
+            <table class="spec-table">
+              <caption data-lang="it">Soft Skills</caption>
+              <caption data-lang="en">Soft Skills</caption>
+              <tbody data-lang="it">
+                <tr><th>S.01</th><td>Empatia</td></tr>
+                <tr><th>S.02</th><td>Comunicazione</td></tr>
+                <tr><th>S.03</th><td>Lavoro di squadra</td></tr>
+                <tr><th>S.04</th><td>Resilienza</td></tr>
+                <tr><th>S.05</th><td>Determinazione</td></tr>
+              </tbody>
+              <tbody data-lang="en">
+                <tr><th>S.01</th><td>Empathy</td></tr>
+                <tr><th>S.02</th><td>Communication</td></tr>
+                <tr><th>S.03</th><td>Teamwork</td></tr>
+                <tr><th>S.04</th><td>Resilience</td></tr>
+                <tr><th>S.05</th><td>Determination</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divisore floppy disk -->
+      <div class="floppy-block reveal">
+        <div class="floppy-block__icon">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Floppy disk 3.5 pollici">
+            <rect x="4" y="4" width="56" height="56" fill="var(--plastic)" stroke="var(--ink)" stroke-width="2" />
+            <rect x="4" y="4" width="34" height="16" fill="var(--ink)" />
+            <rect x="14" y="4" width="10" height="12" fill="var(--paper)" />
+            <rect x="12" y="26" width="40" height="28" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5" />
+            <rect x="18" y="32" width="28" height="4" fill="var(--ink-soft)" />
+            <rect x="18" y="40" width="20" height="3" fill="var(--ink-soft)" />
+          </svg>
+        </div>
+        <div class="floppy-block__card" data-lang="it">
+          <span><strong>Oggetto</strong> Floppy disk 3,5"</span>
+          <span><strong>Cat. n.</strong> FD.3.5–071</span>
+          <span><strong>Capacità</strong> 1.44 MB</span>
+          <span><strong>Formato</strong> Doppia faccia, alta densità</span>
+        </div>
+        <div class="floppy-block__card" data-lang="en">
+          <span><strong>Object</strong> 3.5" floppy disk</span>
+          <span><strong>Cat. no.</strong> FD.3.5–071</span>
+          <span><strong>Capacity</strong> 1.44 MB</span>
+          <span><strong>Format</strong> Double sided, high density</span>
+        </div>
+      </div>
+
+      <!-- ============ 04 PROGETTI ============ -->
+      <section id="progetti" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">04</span>
+            <h2 class="section-head__title" data-lang="it">Progetti</h2>
+            <h2 class="section-head__title" data-lang="en">Projects</h2>
+            <span class="doc-code section-head__code">PF.004.2026</span>
+          </div>
+
+          <p class="section-intro reveal" data-lang="it">
+            Una selezione di progetti personali e freelance, catalogati come
+            voci d'archivio: titolo, descrizione e stack tecnico. Nessun
+            link — solo la scheda.
+          </p>
+          <p class="section-intro reveal" data-lang="en">
+            A selection of personal and freelance projects, catalogued as
+            archive entries: title, description and tech stack. No links —
+            just the record.
+          </p>
+
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--right decor-figure--placeholder reveal" style="--decor-ratio:4/5; --decor-rot:2deg; top:1rem;">
+              <div class="decor-figure__frame">
+                <p class="decor-figure__placeholder-label" data-lang="it">
+                  <strong>Oggetto da inserire</strong>
+                  Slot per una futura foto d'archivio
+                </p>
+                <p class="decor-figure__placeholder-label" data-lang="en">
+                  <strong>Object to add</strong>
+                  Slot for a future archive photo
+                </p>
+              </div>
+            </figure>
+          </div>
+
+          <div class="archive-list has-decor-right">
+            <div class="entry reveal">
+              <span class="object-number entry__num">101</span>
+              <div>
+                <h3 class="entry__title" data-lang="it">Sito Vetrina per Professionista Medico Psicologo</h3>
+                <h3 class="entry__title" data-lang="en">Showcase Website for a Psychology Professional</h3>
+                <p class="entry__desc" data-lang="it">
+                  Sviluppo di un sito web per promuovere servizi di
+                  consulenza psicologica, con informazioni sui servizi
+                  offerti, un modulo di contatto e una sezione dedicata ai
+                  percorsi terapeutici.
+                </p>
+                <p class="entry__desc" data-lang="en">
+                  Development of a website to promote psychological
+                  counseling services, including information about services
+                  offered, a contact form and a section dedicated to
+                  therapeutic paths.
+                </p>
+                <p class="entry__tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span data-lang="it">Design Responsive</span><span data-lang="en">Responsive Design</span></p>
+              </div>
             </div>
-            <div class="mt-4 space-y-6 border-t border-gray-700 pt-4">
+
+            <div class="entry reveal">
+              <span class="object-number entry__num">102</span>
               <div>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://veronicadigiac.github.io/e-commerce/home"
-                    class="text-blue-300"
-                    data-lang="it"
-                    >E-commerce</a
-                  >
+                <h3 class="entry__title">
+                  <span data-lang="it">Cineverse — Piattaforma Articoli &amp; Recensioni</span>
+                  <span data-lang="en">Cineverse — Articles &amp; Reviews Platform</span>
+                  <span class="entry__status" data-lang="it">in sviluppo</span>
+                  <span class="entry__status" data-lang="en">in development</span>
                 </h3>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://veronicadigiac.github.io/e-commerce/home"
-                    class="text-blue-300"
-                    data-lang="en"
-                    >E-commerce</a
-                  >
-                </h3>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
+                <p class="entry__desc" data-lang="it">
+                  Piattaforma full-stack, attualmente in fase di sviluppo,
+                  dove sarà possibile pubblicare articoli e recensioni sul
+                  cinema, con sistema di votazione interattivo.
+                </p>
+                <p class="entry__desc" data-lang="en">
+                  A full-stack platform, currently under development, to
+                  publish movie articles and reviews, featuring an
+                  interactive voting system.
+                </p>
+                <p class="entry__tags"><span>Angular</span><span>TypeScript</span><span>Payload CMS</span></p>
+              </div>
+            </div>
+
+            <div class="entry reveal">
+              <span class="object-number entry__num">103</span>
+              <div>
+                <h3 class="entry__title">E-commerce</h3>
+                <p class="entry__desc" data-lang="it">
                   Sviluppo di un sito e-commerce per la vendita online di
-                  prodotti, con gestione del catalogo, carrello, e varie altre
-                  funzionalità.
-                </h4>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                  Development of an e-commerce website for online product sales,
-                  featuring catalog management, shopping cart, and various other
-                  functionalities.
-                </h4>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="it"
-                >
-                  <li>
-                    <a
-                      href="documentazione-e-commerce.html"
-                      class="hover:text-blue-300"
-                      >Documentazione del progetto</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://veronicadigiac.github.io/e-commerce/home"
-                      class="hover:text-blue-300"
-                      >Link per visualizzare il sito</a
-                    >
-                  </li>
-                </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="en"
-                >
-                  <li>
-                    <a
-                      href="documentazione-e-commerce.html"
-                      class="hover:text-blue-300"
-                      >Project documentation</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://veronicadigiac.github.io/e-commerce/home"
-                      class="hover:text-blue-300"
-                      >Link to view the site</a
-                    >
-                  </li>
-                </ul>
+                  prodotti, con gestione del catalogo, carrello e varie
+                  altre funzionalità.
+                </p>
+                <p class="entry__desc" data-lang="en">
+                  Development of an e-commerce website for online product
+                  sales, featuring catalog management, shopping cart and
+                  various other functionalities.
+                </p>
+                <p class="entry__tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></p>
               </div>
+            </div>
 
+            <div class="entry reveal">
+              <span class="object-number entry__num">104</span>
               <div>
-                <h3 class="font-semibold text-blue-300" data-lang="it">
-                  Lista delle Attività (2024)
-                </h3>
-                <h3 class="font-semibold text-blue-300" data-lang="en">
-                  To-Do List (2024)
-                </h3>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
-                  data-lang="it"
-                >
-                  <li>
-                    Sviluppo di un'applicazione per la gestione delle attività.
-                  </li>
-                  <li>Utilizzo di JSON Server per l'archiviazione dei dati.</li>
-                  <li>
-                    Tecnologie utilizzate: Angular (con Signals), HttpClient per
-                    la comunicazione con le API, e JSON Server.
-                  </li>
-                </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-2"
-                  data-lang="en"
-                >
-                  <li>Developed a task management application.</li>
-                  <li>Used JSON Server for data storage.</li>
-                  <li>
-                    Technologies used: Angular (with Signals), HttpClient for
-                    API communication, and JSON Server.
-                  </li>
-                </ul>
+                <h3 class="entry__title" data-lang="it">Lista delle Attività (2024)</h3>
+                <h3 class="entry__title" data-lang="en">To-Do List (2024)</h3>
+                <p class="entry__desc" data-lang="it">
+                  Applicazione per la gestione delle attività, con
+                  archiviazione dati tramite JSON Server e comunicazione con
+                  le API via HttpClient.
+                </p>
+                <p class="entry__desc" data-lang="en">
+                  Task management application, with data storage via JSON
+                  Server and API communication via HttpClient.
+                </p>
+                <p class="entry__tags"><span>Angular</span><span>Signals</span><span>HttpClient</span><span>JSON Server</span></p>
               </div>
+            </div>
 
+            <div class="entry reveal">
+              <span class="object-number entry__num">105</span>
               <div>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://meteoappangular.netlify.app/weather-card"
-                    class="text-blue-300"
-                    data-lang="it"
-                    >Meteo App</a
-                  >
-                </h3>
-                <h3 class="font-semibold text-white">
-                  <a
-                    href="https://meteoappangular.netlify.app/weather-card"
-                    class="text-blue-300"
-                    data-lang="en"
-                    >Weather App</a
-                  >
-                </h3>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="it">
-                  Applicazione meteo sviluppata con Angular che permette di
-                  cercare le condizioni meteorologiche attuali e le previsioni
-                  giornaliere per qualsiasi città.
-                </h4>
-                <h4 class="text-gray-300 mt-1 font-semibold" data-lang="en">
-                  Weather application developed with Angular that allows
-                  searching for current weather conditions and daily forecasts
-                  for any city.
-                </h4>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="it"
-                >
-                  <li>
-                    <a
-                      href="documentazione-meteo-app.html"
-                      class="hover:text-blue-300"
-                      >Documentazione del progetto</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://meteoappangular.netlify.app/weather-card"
-                      class="hover:text-blue-300"
-                      >Link per visualizzare il sito</a
-                    >
-                  </li>
+                <h3 class="entry__title" data-lang="it">Meteo App</h3>
+                <h3 class="entry__title" data-lang="en">Weather App</h3>
+                <p class="entry__desc" data-lang="it">
+                  Applicazione meteo che permette di cercare le condizioni
+                  meteorologiche attuali e le previsioni giornaliere per
+                  qualsiasi città.
+                </p>
+                <p class="entry__desc" data-lang="en">
+                  Weather application that allows searching for current
+                  weather conditions and daily forecasts for any city.
+                </p>
+                <p class="entry__tags"><span>Angular</span><span data-lang="it">REST API</span><span data-lang="en">REST API</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="barcode-block reveal">
+            <svg viewBox="0 0 180 32" style="color:var(--ink);" aria-hidden="true">
+              <rect x="0" y="0" width="1" height="32" fill="currentColor" /><rect x="3" y="0" width="4" height="32" fill="currentColor" /><rect x="9" y="0" width="1" height="32" fill="currentColor" /><rect x="12" y="0" width="2" height="32" fill="currentColor" /><rect x="16" y="0" width="1" height="32" fill="currentColor" /><rect x="19" y="0" width="3" height="32" fill="currentColor" /><rect x="24" y="0" width="1" height="32" fill="currentColor" /><rect x="27" y="0" width="2" height="32" fill="currentColor" /><rect x="31" y="0" width="4" height="32" fill="currentColor" /><rect x="37" y="0" width="1" height="32" fill="currentColor" /><rect x="40" y="0" width="2" height="32" fill="currentColor" /><rect x="44" y="0" width="1" height="32" fill="currentColor" /><rect x="47" y="0" width="3" height="32" fill="currentColor" /><rect x="52" y="0" width="1" height="32" fill="currentColor" /><rect x="55" y="0" width="2" height="32" fill="currentColor" /><rect x="59" y="0" width="1" height="32" fill="currentColor" /><rect x="62" y="0" width="4" height="32" fill="currentColor" /><rect x="68" y="0" width="1" height="32" fill="currentColor" /><rect x="71" y="0" width="2" height="32" fill="currentColor" /><rect x="75" y="0" width="1" height="32" fill="currentColor" /><rect x="78" y="0" width="3" height="32" fill="currentColor" /><rect x="83" y="0" width="1" height="32" fill="currentColor" /><rect x="86" y="0" width="2" height="32" fill="currentColor" />
+            </svg>
+            <span class="doc-code">PF.004.2026</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 05 FORMAZIONE E CERTIFICAZIONI ============ -->
+      <section id="formazione" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">05</span>
+            <h2 class="section-head__title" data-lang="it">Formazione e certificazioni</h2>
+            <h2 class="section-head__title" data-lang="en">Education &amp; certifications</h2>
+            <span class="doc-code section-head__code">PF.005.2026</span>
+          </div>
+
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--left decor-figure--placeholder reveal" style="--decor-ratio:1/1; --decor-rot:-3deg; top:1rem;">
+              <div class="decor-figure__frame">
+                <p class="decor-figure__placeholder-label" data-lang="it">
+                  <strong>Floppy disk 3,5"</strong>
+                  Foto in arrivo — cat. FD.3.5–105
+                </p>
+                <p class="decor-figure__placeholder-label" data-lang="en">
+                  <strong>3.5" floppy disk</strong>
+                  Photo coming soon — cat. FD.3.5–105
+                </p>
+              </div>
+            </figure>
+          </div>
+
+          <div class="stamp-row has-decor-left reveal" aria-hidden="true">
+            <div class="stamp">
+              <svg viewBox="0 0 120 120">
+                <defs><path id="stampCircle1" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" /></defs>
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+                <circle cx="60" cy="60" r="38" fill="none" stroke="var(--ink)" stroke-width="1" />
+                <text font-family="var(--font-mono)" font-size="8" letter-spacing="2" fill="var(--ink)">
+                  <textPath href="#stampCircle1">• TALENTFORM • 2024 • WEB DEVELOPER</textPath>
+                </text>
+                <text x="60" y="58" text-anchor="middle" font-family="var(--font-sans)" font-weight="700" font-size="12" fill="var(--signal-red)">WEB</text>
+                <text x="60" y="74" text-anchor="middle" font-family="var(--font-sans)" font-weight="700" font-size="12" fill="var(--signal-red)">DEV</text>
+              </svg>
+            </div>
+            <div class="stamp">
+              <svg viewBox="0 0 120 120">
+                <defs><path id="stampCircle2" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" /></defs>
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+                <circle cx="60" cy="60" r="38" fill="none" stroke="var(--ink)" stroke-width="1" />
+                <text font-family="var(--font-mono)" font-size="8" letter-spacing="2" fill="var(--ink)">
+                  <textPath href="#stampCircle2">• FABIO BIONDI ACADEMY • 2024 • ANGULAR 17</textPath>
+                </text>
+                <text x="60" y="66" text-anchor="middle" font-family="var(--font-sans)" font-weight="700" font-size="12" fill="var(--signal-red)">NG</text>
+              </svg>
+            </div>
+            <div class="stamp">
+              <svg viewBox="0 0 120 120">
+                <defs><path id="stampCircle3" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" /></defs>
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+                <circle cx="60" cy="60" r="38" fill="none" stroke="var(--ink)" stroke-width="1" />
+                <text font-family="var(--font-mono)" font-size="8" letter-spacing="2" fill="var(--ink)">
+                  <textPath href="#stampCircle3">• LABFORTRAINING • 2023–2024 • FRONT-END</textPath>
+                </text>
+                <text x="60" y="58" text-anchor="middle" font-family="var(--font-sans)" font-weight="700" font-size="12" fill="var(--signal-red)">FRONT</text>
+                <text x="60" y="74" text-anchor="middle" font-family="var(--font-sans)" font-weight="700" font-size="12" fill="var(--signal-red)">END</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="timeline has-decor-left">
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">01</span>
+              <div class="timeline-item__body">
+                <h3 data-lang="it">Corso di Formazione Web Developer — TalentForm</h3>
+                <h3 data-lang="en">Web Developer Training Course — TalentForm</h3>
+                <div class="timeline-item__meta"><span>2024</span></div>
+                <ul class="timeline-item__list" data-lang="it">
+                  <li>Fondamenti di Java e Spring Boot</li>
+                  <li>SQL per operazioni CRUD</li>
+                  <li>Interfacce multifunzionali (MySQL–Java)</li>
+                  <li>Dependency Injection, Annotations, Spring Data JPA</li>
                 </ul>
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 mt-4"
-                  data-lang="en"
-                >
-                  <li>
-                    <a
-                      href="documentazione-meteo-app.html"
-                      class="hover:text-blue-300"
-                      >Project documentation</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://meteoappangular.netlify.app/weather-card"
-                      class="hover:text-blue-300"
-                      >Link to view the site</a
-                    >
-                  </li>
+                <ul class="timeline-item__list" data-lang="en">
+                  <li>Fundamentals of Java and Spring Boot</li>
+                  <li>SQL for CRUD operations</li>
+                  <li>Multifunctional interfaces (MySQL–Java)</li>
+                  <li>Dependency Injection, Annotations, Spring Data JPA</li>
                 </ul>
               </div>
+            </div>
 
-              <!-- /Cineverse -->
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">02</span>
+              <div class="timeline-item__body">
+                <h3 data-lang="it">Corso Avanzato Angular (Angular 17) — Fabio Biondi Academy</h3>
+                <h3 data-lang="en">Advanced Angular Course (Angular 17) — Fabio Biondi Academy</h3>
+                <div class="timeline-item__meta"><span>2024</span></div>
+                <ul class="timeline-item__list" data-lang="it">
+                  <li>Fondamenti di Angular 14+ e approfondimenti su Angular 17+</li>
+                  <li>Signals, Standalone Components, Router e applicazioni multiview</li>
+                  <li>HTTP Client e REST API, autenticazione con Auth0</li>
+                  <li>Fondamenti dei Reactive Forms in Angular</li>
+                </ul>
+                <ul class="timeline-item__list" data-lang="en">
+                  <li>Fundamentals of Angular 14+ and in-depth Angular 17+ topics</li>
+                  <li>Signals, Standalone Components, Router and multiview apps</li>
+                  <li>HTTP Client and REST APIs, authentication with Auth0</li>
+                  <li>Fundamentals of Angular Reactive Forms</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">03</span>
+              <div class="timeline-item__body">
+                <h3 data-lang="it">Corso Front-End Developer — Labfortraining | Labforweb</h3>
+                <h3 data-lang="en">Front-End Developer Course — Labfortraining | Labforweb</h3>
+                <div class="timeline-item__meta"><span>2023–2024</span></div>
+                <ul class="timeline-item__list" data-lang="it">
+                  <li>HTML5, CSS3, JavaScript (ES6)</li>
+                  <li>Angular, Angular avanzato</li>
+                  <li>Bootstrap, Responsive Design, Git</li>
+                  <li>Progetti progressivi per consolidare le competenze acquisite</li>
+                </ul>
+                <ul class="timeline-item__list" data-lang="en">
+                  <li>HTML5, CSS3, JavaScript (ES6)</li>
+                  <li>Angular, Advanced Angular</li>
+                  <li>Bootstrap, Responsive Design, Git</li>
+                  <li>Progressively challenging projects to consolidate skills</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <span class="object-number timeline-item__num">04</span>
+              <div class="timeline-item__body">
+                <h3 data-lang="it">Diploma in Servizi Sociali — Ist. Prof. F. L. Morvillo Falcone, Brindisi</h3>
+                <h3 data-lang="en">High School Diploma in Social Services — F. L. Morvillo Falcone Institute, Brindisi</h3>
+                <div class="timeline-item__meta"><span>2012–2013</span></div>
+                <ul class="timeline-item__list" data-lang="it">
+                  <li>Studi nell'ambito psico-pedagogico, educativo e sociale</li>
+                  <li>Stage in strutture socio-educative e assistenziali</li>
+                  <li>Sviluppo di competenze relazionali e comunicative</li>
+                </ul>
+                <ul class="timeline-item__list" data-lang="en">
+                  <li>Studies in psychological, educational and social fields</li>
+                  <li>Internship in socio-educational and care facilities</li>
+                  <li>Development of interpersonal and communication skills</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <table class="spec-table reveal" style="margin-top:2.5rem;">
+            <caption data-lang="it">Attività extracurricolari</caption>
+            <caption data-lang="en">Extracurricular activities</caption>
+            <tbody>
+              <tr>
+                <th data-lang="it">Musica</th><th data-lang="en">Music</th>
+                <td data-lang="it">Studio di pianoforte classico presso il Conservatorio "Nino Rota" di Monopoli</td>
+                <td data-lang="en">Classical piano studies at the "Nino Rota" Conservatory of Monopoli</td>
+              </tr>
+              <tr>
+                <th data-lang="it">Scrittura</th><th data-lang="en">Writing</th>
+                <td data-lang="it">Partecipazione a concorsi di scrittura creativa e in prosa</td>
+                <td data-lang="en">Participation in creative and prose writing competitions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ 06 CONTATTI ============ -->
+      <section id="contatti" data-section class="section reg-mark">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="object-number section-head__num">06</span>
+            <h2 class="section-head__title" data-lang="it">Contatti</h2>
+            <h2 class="section-head__title" data-lang="en">Contact</h2>
+            <span class="doc-code section-head__code">PF.006.2026</span>
+          </div>
+
+          <p class="section-intro reveal" data-lang="it">
+            Modulo di contatto in formato cartaceo. Compila mentalmente, o
+            più semplicemente scrivi, chiama o collegati da uno dei campi
+            qui sotto.
+          </p>
+          <p class="section-intro reveal" data-lang="en">
+            A paper-form-style contact record. Fill it in mentally, or
+            simply write, call or connect from one of the fields below.
+          </p>
+
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--right reveal" data-parallax style="--decor-ratio:591/583; --decor-rot:4deg; top:0;">
+              <div class="decor-figure__frame">
+                <img src="assets/img/snake.jpg" width="591" height="583" loading="lazy" alt="" aria-hidden="true" />
+              </div>
+            </figure>
+          </div>
+
+          <div class="contact-form reveal">
+            <div class="form-field">
+              <span class="form-field__label" data-lang="it">Email</span>
+              <span class="form-field__label" data-lang="en">Email</span>
+              <a class="form-field__value" href="mailto:veronicadigiacomo190@gmail.com">veronicadigiacomo190@gmail.com</a>
+            </div>
+            <div class="form-field">
+              <span class="form-field__label" data-lang="it">Telefono</span>
+              <span class="form-field__label" data-lang="en">Phone</span>
+              <a class="form-field__value" href="tel:+393467133115">(+39) 346 7133115</a>
+            </div>
+            <div class="form-field">
+              <span class="form-field__label">LinkedIn</span>
+              <a class="form-field__value" href="https://www.linkedin.com/in/veronicadg/" target="_blank" rel="noopener">/in/veronicadg</a>
+            </div>
+            <div class="form-field">
+              <span class="form-field__label">GitHub</span>
+              <a class="form-field__value" href="https://github.com/VeronicaDiGiac" target="_blank" rel="noopener">/VeronicaDiGiac</a>
+            </div>
+            <div class="form-field">
+              <span class="form-field__label" data-lang="it">Località</span>
+              <span class="form-field__label" data-lang="en">Location</span>
+              <span class="form-field__value" data-lang="it">Brindisi, Italia</span>
+              <span class="form-field__value" data-lang="en">Brindisi, Italy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Easter egg -->
+      <div class="section" style="padding-top:0;padding-bottom:3rem;border-top:none;">
+        <div class="section-inner">
+          <div class="decor-anchor">
+            <figure class="decor-figure decor-figure--right decor-figure--placeholder reveal" style="--decor-ratio:1/1; --decor-rot:3deg; top:-1rem; width:clamp(6rem, 9vw, 8rem);">
+              <div class="decor-figure__frame">
+                <p class="decor-figure__placeholder-label" data-lang="it">
+                  <strong>Trinket</strong>
+                  Slot oggetto extra
+                </p>
+                <p class="decor-figure__placeholder-label" data-lang="en">
+                  <strong>Trinket</strong>
+                  Extra object slot
+                </p>
+              </div>
+            </figure>
+          </div>
+          <div class="win95 reveal">
+            <div class="win95__title">
+              <span data-lang="it">Errore</span><span data-lang="en">Error</span>
+              <button class="win95__close" type="button" aria-label="Chiudi" tabindex="-1">X</button>
+            </div>
+            <div class="win95__body">
+              <p data-lang="it"><strong>404</strong> — La sezione che cerchi non è ancora stata catalogata.</p>
+              <p data-lang="it">Prova a tornare all'indice in cima alla pagina.</p>
+              <p data-lang="en"><strong>404</strong> — The section you're looking for hasn't been catalogued yet.</p>
+              <p data-lang="en">Try heading back to the index at the top of the page.</p>
+              <p class="doc-code">RIF: PF.404.2026</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+      <span class="doc-code">PF.INDEX.2026</span>
+      <span data-lang="it">Ultima revisione: 31.08.2026</span>
+      <span data-lang="en">Last revision: 08.31.2026</span>
+      <span>© 2026 Veronica Di Giacomo</span>
+    </footer>
+
+    <div id="assistant-root"></div>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/decor.js"></script>
+    <script type="module">
+      import { Assistant } from "./assets/js/assistant.js";
+      import { SECTION_MESSAGES, WELCOME_MESSAGE, RANDOM_MESSAGES } from "./assets/js/assistant-messages.js";
+
+      new Assistant(document.getElementById("assistant-root"), {
+        messages: SECTION_MESSAGES,
+        welcomeMessage: WELCOME_MESSAGE,
+        randomMessages: RANDOM_MESSAGES,
+        startDelayMs: 3000,
+      });
+    </script>
   </body>
 </html>
