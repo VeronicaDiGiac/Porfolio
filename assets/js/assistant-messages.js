@@ -6,7 +6,7 @@ export const WELCOME_MESSAGE =
 
 export const SECTION_MESSAGES = {
   "hero": "Benvenuto nella scheda 000. Niente panico, non devi inserire nessun dischetto.",
-  "chi-sono": "Sezione biografica. Attenzione: contiene un pianoforte, un forno olandese e zero righe di codice prima del 2023.",
+  "chi-sono": "Sezione biografica. Attenzione: contiene un pianoforte, un forno olandese.",
   "esperienza": "Qui si parla di lavoro vero. Io mi limito a fare il tifo dal margine della pagina.",
   "competenze": "Una tabella di specifiche tecniche. Se qualcosa non ti torna, non è un bug: è lo stile del catalogo.",
   "progetti": "Voci d'archivio senza link cliccabili, come da regolamento interno. Io stesso non ho un link, e mi va benissimo così.",

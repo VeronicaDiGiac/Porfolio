@@ -644,6 +644,40 @@ body::before {
   color: var(--ink-soft);
 }
 
+/* Più progetti sotto lo stesso ruolo/azienda in una timeline-item */
+.timeline-project {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: var(--rule-w) dashed var(--ink-soft);
+}
+
+.timeline-project:first-child {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.timeline-project__title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.timeline-project__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-left: 0.6em;
+}
+
+.timeline-project .timeline-item__desc,
+.timeline-project .timeline-item__list {
+  margin-top: 0.6rem;
+}
+
 .timeline-item__list {
   margin-top: 1rem;
   display: flex;
@@ -1040,8 +1074,13 @@ body::before {
 }
 
 /* ---- data-lang toggling ---------------------------------------------------- */
-[data-lang] {
-  display: none;
+/* !important qui è intenzionale: garantisce che la lingua inattiva resti
+   nascosta anche quando un componente specifico (es. ".margin-note strong")
+   dichiara un proprio "display" più specifico della regola di visibilità di
+   base — è esattamente il bug che ha causato testo IT/EN duplicato in
+   pagina prima di questa correzione. */
+[data-lang]:not(.is-active) {
+  display: none !important;
 }
 
 [data-lang].is-active {
